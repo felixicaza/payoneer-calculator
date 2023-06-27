@@ -24,3 +24,6 @@ pnpm-lock.yaml
 *.njsproj
 *.sln
 *.sw?
+
+# Vite PWA Plugin
+dev-dist
