@@ -27,3 +27,7 @@ pnpm-lock.yaml
 
 # Vite PWA Plugin
 dev-dist
+
+# Firebase
+.firebase/
+**/.firebaserc
