@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc && vite build",
     "dev": "vite",
+    "generate-pwa-assets": "pwa-assets-generator",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prepare": "husky install",
     "preview": "vite preview"
@@ -33,6 +34,7 @@
     "@types/react-dom": "18.2.6",
     "@typescript-eslint/eslint-plugin": "5.60.1",
     "@typescript-eslint/parser": "5.60.1",
+    "@vite-pwa/assets-generator": "0.0.3",
     "@vitejs/plugin-react-swc": "3.3.2",
     "autoprefixer": "10.4.14",
     "eslint": "8.38.0",
