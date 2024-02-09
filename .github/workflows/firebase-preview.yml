@@ -1,0 +1,43 @@
+name: Deploy preview project
+
+'on':
+   push:
+      branches: [dev]
+
+jobs:
+   build_preview:
+      runs-on: ubuntu-latest
+
+      strategy:
+         matrix:
+            node-version: [20.x]
+
+      steps:
+         - uses: actions/checkout@v4.1.1
+
+         - name: Using Node.js ${{ matrix.node-version }}
+           uses: actions/setup-node@v4.0.2
+           with:
+              node-version: ${{ matrix.node-version }}
+
+         - name: Install pnpm
+           uses: pnpm/action-setup@v3.0.0
+           with:
+              version: latest
+
+         - name: Install dependencies
+           run: pnpm install
+
+         - name: Build project
+           run: pnpm build
+
+         - name: Deploy preview to Firebase
+           uses: FirebaseExtended/action-hosting-deploy@v0.7.1
+           with:
+              repoToken: '${{ secrets.GITHUB_TOKEN }}'
+              firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PAYONEER_CALCULATOR }}'
+              channelId: 'preview'
+              expires: 1d
+              projectId: payoneer-calculator
+           env:
+              FIREBASE_CLI_PREVIEWS: hostingchannels
