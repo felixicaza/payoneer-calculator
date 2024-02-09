@@ -70,20 +70,21 @@ export default function Calculator(): ReactElement {
     <>
       <section>
         <label className="flex flex-col gap-2">
-          <span className="text-[#e39578]">Ingresa el monto a retirar:</span>
+          <span className="text-[#783F2A]">Ingresa el monto a retirar:</span>
           <div className="relative">
             <input
-              className="col-span-1 row-span-2 max-w-xs rounded bg-[#ff4800]/10 py-3 text-center text-4xl font-semibold text-[#e39578] focus:outline focus:outline-4 focus:outline-[#ff4800]/15"
+              className="col-span-1 row-span-2 max-w-xs rounded bg-[#ff4800]/10 py-4 text-center text-4xl font-semibold text-[#783F2A] focus:outline focus:outline-4 focus:outline-[#ff4800]/15"
               type="text"
               value={inputValue}
               ref={inputRef}
               onChange={handleChange}
             />
             <button
-              className="absolute right-0 top-0 flex h-1/2 w-[35px] items-center justify-center rounded-tr font-bold text-[#e39578] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/10"
+              className="absolute right-0 top-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15"
               type="button"
               ref={plusBtnRef}
               onClick={handlePlus}
+              aria-label="Aumentar cantidad"
             >
               <svg width="0.7rem" viewBox="0 0 448 512">
                 <path
@@ -93,10 +94,11 @@ export default function Calculator(): ReactElement {
               </svg>
             </button>
             <button
-              className="absolute bottom-0 right-0 flex h-1/2 w-[35px] items-center justify-center rounded-tr font-bold text-[#e39578] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/10"
+              className="absolute bottom-0 right-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15"
               type="button"
               ref={minusBtnRef}
               onClick={handleMinus}
+              aria-label="Disminuir cantidad"
             >
               <svg width="0.7rem" viewBox="0 0 448 512">
                 <path
@@ -110,14 +112,14 @@ export default function Calculator(): ReactElement {
       </section>
       {inputValue >= INITIAL_VALUE && (
         <div>
-          <p className="text-[#e39578]">Necesitas al menos:</p>
-          <output className="rounded px-4 py-2 text-lg font-bold text-[#56b372]">
+          <p className="text-[#783F2A]">Necesitas al menos:</p>
+          <output className="rounded px-4 py-2 text-lg font-bold text-[#265A36]">
             {OUTPUT_TOTAL}
           </output>
         </div>
       )}
       {inputValue < INITIAL_VALUE && (
-        <span className="rounded px-4 py-2 text-lg font-bold text-[#f76965]">
+        <span className="rounded px-4 py-2 text-lg font-bold text-[#9D1A1A]">
           El valor mínimo es de $20
         </span>
       )}
