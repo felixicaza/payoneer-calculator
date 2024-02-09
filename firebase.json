@@ -1,6 +1,70 @@
 {
   "hosting": {
+    "headers": [
+      {
+        "source": "**/*",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          },
+          {
+            "key": "Content-Security-Policy",
+            "value": "upgrade-insecure-requests; default-src 'none'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.googletagmanager.com https://www.gstatic.com; style-src 'self' 'unsafe-inline'; img-src 'self' https://www.google.com.ni https://www.googletagmanager.com; font-src 'self'; frame-ancestors 'none'; base-uri 'none'; manifest-src 'self'; frame-src 'self' https://www.google.com; connect-src 'self' https://www.google-analytics.com https://firebase.googleapis.com https://firebaseinstallations.googleapis.com https://analytics.google.com https://stats.g.doubleclick.net https://www.google.com.ni https://www.googleapis.com/;"
+          },
+          {
+            "key": "Cross-Origin-Resource-Policy",
+            "value": "cross-origin"
+          },
+          {
+            "key": "Cross-Origin-Opener-Policy",
+            "value": "same-origin"
+          },
+          {
+            "key": "Cross-Origin-Embedder-Policy",
+            "value": "unsafe-none"
+          },
+          {
+            "key": "Developed-By",
+            "value": "'Felix Icaza' https://felixicaza.com"
+          },
+          {
+            "key": "Origin-Agent-Cluster",
+            "value": "?1"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "no-referrer"
+          },
+          {
+            "key": "Strict-Transport-Security",
+            "value": "max-age=31536000; includeSubDomains; preload"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-DNS-Prefetch-Control",
+            "value": "off"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "DENY"
+          },
+          {
+            "key": "X-Permitted-Cross-Domain-Policies",
+            "value": "none"
+          },
+          {
+            "key": "X-XSS-Protection",
+            "value": "1; mode=block"
+          }
+        ]
+      }
+    ],
     "public": "dist",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "trailingSlash": false
   }
 }
