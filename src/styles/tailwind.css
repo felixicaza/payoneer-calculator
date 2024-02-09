@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  body, #root {
-    @apply h-screen overflow-hidden;
+  body {
+    @apply h-svh overflow-hidden;
   }
 }

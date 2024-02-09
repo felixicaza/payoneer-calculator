@@ -1,59 +1,60 @@
 {
   "name": "payoneer-calculator",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "tsc && vite build",
-    "dev": "vite",
-    "generate-pwa-assets": "pwa-assets-generator",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "prepare": "husky install",
-    "preview": "vite preview"
+    "astro": "astro",
+    "build": "astro check && astro build",
+    "dev": "astro dev",
+    "prepare": "husky",
+    "preview": "astro preview",
+    "start": "astro dev"
   },
   "lint-staged": {
     "./**/*.{js,mjs,cjs}": [
       "eslint --cache --fix --ext .js,.mjs,.cjs ./",
-      "prettier --write \"./**/*.{js,mjs,cjs}\""
+      "prettier --cache --write \"./**/*.{js,mjs,cjs}\""
     ],
-    "./src/**/*.{jsx,tsx}": [
-      "eslint --cache --ext .jsx,.tsx ./src/ --fix",
-      "prettier --write \"./src/**/*.{jsx,tsx}\""
+    "./src/**/*.astro": [
+      "eslint --cache --fix --ext .astro ./src/",
+      "prettier --cache --write \"./src/**/*.astro\""
     ],
-    "./index.html": "prettier --write \"./index.html\"",
-    "./src/styles/*.css": "prettier --write \"./src/styles/*.css\"",
-    "./**/*.json": "prettier --write \"./**/*.json\"",
-    "./**/*.{yaml,yml}": "prettier --write \"./**/*.{yaml,yml}\""
+    "./src/**/*.tsx": [
+      "eslint --cache --fix --ext .tsx ./src/",
+      "prettier --cache --write \"./src/**/*.tsx\""
+    ],
+    "./src/**/*.css": "prettier --cache --write \"./src/**/*.css\"",
+    "./**/*.json": "prettier --cache --write \"./**/*.json\"",
+    "./**/*.yml": "prettier --cache --write \"./**/*.yml\""
   },
   "dependencies": {
+    "@astrojs/check": "0.5.1",
+    "@astrojs/react": "3.0.10",
+    "@astrojs/tailwind": "5.1.0",
+    "astro": "4.3.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.4.1"
   },
   "devDependencies": {
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
-    "@typescript-eslint/eslint-plugin": "5.60.1",
-    "@typescript-eslint/parser": "5.60.1",
-    "@vite-pwa/assets-generator": "0.0.3",
-    "@vitejs/plugin-react-swc": "3.3.2",
-    "autoprefixer": "10.4.14",
-    "eslint": "8.38.0",
-    "eslint-config-prettier": "8.8.0",
-    "eslint-config-standard": "17.1.0",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "eslint-plugin-react-refresh": "0.4.1",
-    "husky": "8.0.3",
-    "lint-staged": "13.2.2",
-    "postcss": "8.4.24",
-    "prettier": "2.8.8",
-    "prettier-plugin-tailwindcss": "0.3.0",
-    "tailwindcss": "3.3.2",
-    "typescript": "5.1.3",
-    "vite": "4.3.9",
-    "vite-plugin-pwa": "0.16.4"
-  },
-  "engines": {
-    "node": "^18",
-    "npm": "^9"
+    "@types/react": "18.2.55",
+    "@types/react-dom": "18.2.19",
+    "@typescript-eslint/eslint-plugin": "6.4.0",
+    "@typescript-eslint/parser": "6.21.0",
+    "eslint": "8.0.1",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-config-standard-with-typescript": "43.0.1",
+    "eslint-plugin-astro": "0.31.4",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-jsx-a11y": "6.8.0",
+    "eslint-plugin-n": "15.0.0 || 16.0.0 ",
+    "eslint-plugin-promise": "6.0.0",
+    "eslint-plugin-react": "7.33.2",
+    "husky": "9.0.10",
+    "lint-staged": "15.2.2",
+    "prettier": "3.2.5",
+    "prettier-plugin-astro": "0.13.0",
+    "prettier-plugin-tailwindcss": "0.5.11",
+    "typescript": "5.3.3"
   }
 }
