@@ -22,6 +22,9 @@ const { title, description } = options
 
     <title>{title}</title>
 
+    <link crossorigin href="//www.googletagmanager.com/" rel="preconnect" />
+    <link crossorigin href="//www.google-analytics.com/" rel="preconnect" />
+
     <meta name="robots" content="index, follow" />
     <meta name="description" content={description} />
     <meta name="author" content="Félix Icaza - https://felixicaza.com" />
@@ -32,6 +35,23 @@ const { title, description } = options
   </body>
 
   <script>
+    import { initializeApp } from 'firebase/app'
+    import { getAnalytics } from 'firebase/analytics'
     import '@scripts/logger.js'
+
+    if (window.location.hostname === 'payoneer-calculator.web.app') {
+      const firebaseConfig = {
+        apiKey: 'AIzaSyAIt_klG3dCmYCPx00BLShcBj6xRHpQf2M',
+        authDomain: 'payoneer-calculator.firebaseapp.com',
+        projectId: 'payoneer-calculator',
+        storageBucket: 'payoneer-calculator.appspot.com',
+        messagingSenderId: '833757324098',
+        appId: '1:833757324098:web:56d381a923cec448b41edb',
+        measurementId: 'G-CMRJTB4RHV'
+      }
+
+      const app = initializeApp(firebaseConfig)
+      getAnalytics(app)
+    }
   </script>
 </html>
