@@ -71,6 +71,9 @@ module.exports = {
         react: {
           version: 'detect'
         }
+      },
+      rules: {
+        '@typescript-eslint/space-before-function-paren': 'off'
       }
     }
   ]
