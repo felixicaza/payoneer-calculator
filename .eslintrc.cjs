@@ -51,7 +51,10 @@ module.exports = {
       parserOptions: {
         project: ['./tsconfig.json']
       },
-      extends: ['standard-with-typescript']
+      extends: ['standard-with-typescript'],
+      rules: {
+        '@typescript-eslint/space-before-function-paren': 'off'
+      }
     },
     {
       files: ['*.tsx'],
