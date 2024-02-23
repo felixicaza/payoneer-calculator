@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # Optional eslint cache
 .eslintcache
+
+
+# vite-pwa/astro
+dev-dist
