@@ -30,7 +30,7 @@ export default defineConfig({
         name: 'Calculadora Payonner',
         short_name: 'Calculadora Payoneer',
         description:
-          'Calculadora de Impuestos de Payoneer, con la cual puedes calcular todas las comisiones aplicadas al momento de realizar un retiro de un cajero en Nicaragua.',
+          'Calcula de manera FÁCIL, RÁPIDA Y SEGURA, todas las COMISIONES DE PAYONEER Y DEL BANCO aplicadas al momento de realizar un retiro de un CAJERO ATM en Nicaragua.',
         dir: 'ltr',
         lang: 'es',
         display: 'standalone',

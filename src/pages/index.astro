@@ -4,9 +4,9 @@ import Layout from '@layouts/Layout.astro'
 import Calculator from '@components/Calculator.tsx'
 
 const options = {
-  title: 'Calculadora Payoneer Nicaragua',
+  title: 'Calculadora de Comisiones de Payoneer en Nicaragua',
   description:
-    'Calculadora de Impuestos de Payoneer, con la cual puedes calcular todas las comisiones aplicadas al momento de realizar un retiro de un cajero en Nicaragua.'
+    'Calcula de manera FÁCIL, RÁPIDA Y SEGURA, todas las COMISIONES DE PAYONEER Y DEL BANCO aplicadas al momento de realizar un retiro de un CAJERO ATM en Nicaragua.'
 }
 ---
 
@@ -14,7 +14,9 @@ const options = {
   <main
     class="flex h-svh flex-col items-center justify-center gap-8 bg-[#ff4800]/10 px-4 text-center"
   >
-    <h1 class="text-5xl font-bold text-[#783F2A]">{options.title}</h1>
+    <h1 class="text-5xl font-bold text-[#783F2A]">
+      Calculadora Payoneer Nicaragua
+    </h1>
     <Calculator client:load />
   </main>
 </Layout>
