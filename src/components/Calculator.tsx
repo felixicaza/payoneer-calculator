@@ -71,7 +71,7 @@ export default function Calculator(): ReactElement {
       <section>
         <label className="flex flex-col gap-2">
           <span className="text-[#783F2A]">Ingresa el monto a retirar:</span>
-          <div className="relative">
+          <div className="relative mx-auto w-max">
             <input
               className="col-span-1 row-span-2 max-w-xs rounded bg-[#ff4800]/10 py-4 text-center text-4xl font-semibold text-[#783F2A] focus:outline focus:outline-4 focus:outline-[#ff4800]/15"
               type="text"
