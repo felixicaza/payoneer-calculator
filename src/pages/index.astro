@@ -11,12 +11,26 @@ const options = {
 ---
 
 <Layout {options}>
-  <main
-    class="flex h-svh flex-col items-center justify-center gap-8 bg-[#ff4800]/10 px-4 text-center"
-  >
-    <h1 class="text-5xl font-bold text-[#783F2A]">
-      Calculadora Payoneer Nicaragua
-    </h1>
-    <Calculator client:load />
+  <main class="grid h-svh grid-rows-1 bg-[#ff4800]/10 px-4 py-8 text-center">
+    <article class="self-center">
+      <h1 class="mb-8 text-5xl font-bold text-[#783F2A]">
+        Calculadora Payoneer Nicaragua
+      </h1>
+      <Calculator client:load />
+    </article>
+    <footer class="flex items-center justify-center gap-2 text-[#783F2A]">
+      Desarrollado por <a
+        href="https://felixicaza.com"
+        target="_blank"
+        aria-label="Sitio web de Félix Icaza"
+      >
+        <img
+          width="120"
+          src="/img/logo.svg"
+          alt="Félix Icaza Logo"
+          fetchpriority="high"
+        />
+      </a>
+    </footer>
   </main>
 </Layout>
