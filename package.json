@@ -8,7 +8,8 @@
     "dev": "astro dev",
     "prepare": "husky",
     "preview": "astro preview",
-    "start": "astro dev"
+    "start": "astro dev",
+    "run:eslint": "eslint --cache --fix --ext .js,.mjs,.cjs ./"
   },
   "lint-staged": {
     "./**/*.{js,mjs,cjs}": [
@@ -29,36 +30,37 @@
   },
   "dependencies": {
     "@astrojs/check": "0.5.10",
-    "@astrojs/react": "3.1.0",
+    "@astrojs/react": "3.3.0",
     "@astrojs/tailwind": "5.1.0",
-    "astro": "4.5.9",
-    "firebase": "10.9.0",
+    "astro": "4.6.1",
+    "firebase": "10.11.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "3.4.1"
+    "tailwindcss": "3.4.3"
   },
   "devDependencies": {
-    "@types/react": "18.2.70",
-    "@types/react-dom": "18.2.22",
-    "@typescript-eslint/eslint-plugin": "6.4.0",
-    "@typescript-eslint/parser": "6.21.0",
+    "@types/react": "18.2.78",
+    "@types/react-dom": "18.2.25",
+    "@typescript-eslint/eslint-plugin": "7.0.1",
+    "@typescript-eslint/parser": "7.6.0",
     "@vite-pwa/astro": "0.3.1",
-    "eslint": "8.0.1",
+    "eslint": "8.56.0",
+    "eslint-config-love": "47.0.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-config-standard-with-typescript": "43.0.1",
-    "eslint-plugin-astro": "0.31.4",
+    "eslint-config-standard": "17.1.0",
+    "eslint-plugin-astro": "0.34.0",
     "eslint-plugin-import": "2.25.2",
     "eslint-plugin-jsx-a11y": "6.8.0",
-    "eslint-plugin-n": "15.0.0 || 16.0.0 ",
+    "eslint-plugin-n": "16.0.0",
     "eslint-plugin-promise": "6.0.0",
-    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react": "7.34.1",
     "husky": "9.0.11",
     "lint-staged": "15.2.2",
     "prettier": "3.2.5",
     "prettier-plugin-astro": "0.13.0",
-    "prettier-plugin-tailwindcss": "0.5.12",
-    "typescript": "5.4.3",
-    "vite-plugin-pwa": "0.19.7",
+    "prettier-plugin-tailwindcss": "0.5.13",
+    "typescript": "5.4.5",
+    "vite-plugin-pwa": "0.19.8",
     "workbox-window": "7.0.0"
   }
 }
