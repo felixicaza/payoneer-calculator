@@ -41,6 +41,7 @@ module.exports = {
         sourceType: 'module',
         project: null
       },
+      extends: ['love'],
       rules: {
         'prettier/prettier': 'off'
       }
@@ -51,7 +52,7 @@ module.exports = {
       parserOptions: {
         project: ['./tsconfig.json']
       },
-      extends: ['standard-with-typescript'],
+      extends: ['love'],
       rules: {
         '@typescript-eslint/space-before-function-paren': 'off'
       }
@@ -64,10 +65,10 @@ module.exports = {
         project: ['./tsconfig.json']
       },
       extends: [
-        'standard-with-typescript',
         'plugin:react/recommended',
         'plugin:react/jsx-runtime',
-        'plugin:jsx-a11y/recommended'
+        'plugin:jsx-a11y/recommended',
+        'love'
       ],
       plugins: ['react', 'jsx-a11y'],
       settings: {
