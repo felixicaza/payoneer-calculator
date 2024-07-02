@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@astrojs/check": "0.5.10",
-    "@astrojs/react": "3.3.0",
+    "@astrojs/react": "3.6.0",
     "@astrojs/tailwind": "5.1.0",
     "astro": "4.6.3",
     "firebase": "10.11.0",
