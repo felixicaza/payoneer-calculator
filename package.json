@@ -29,7 +29,7 @@
     "./**/*.yml": "prettier --cache --write \"./**/*.yml\""
   },
   "dependencies": {
-    "@astrojs/check": "0.8.2",
+    "@astrojs/check": "0.8.3",
     "@astrojs/react": "3.6.0",
     "@astrojs/tailwind": "5.1.0",
     "astro": "4.12.2",
