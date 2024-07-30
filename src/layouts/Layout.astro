@@ -258,7 +258,7 @@ const { title, description } = options
       href="splash_screens/8.3__iPad_Mini_portrait.png"
     />
   </head>
-  <body>
+  <body class:list={{ 'h-svh overflow-hidden': Astro.url.pathname === '/' }}>
     <slot />
   </body>
 
