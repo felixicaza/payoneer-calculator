@@ -1,7 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro'
-
+import { Icon } from 'astro-iconify'
 import Calculator from '@components/Calculator.tsx'
+import Author from '@components/Author.astro'
 
 const options = {
   title: 'Calculadora de Comisiones de Payoneer en Nicaragua',
@@ -18,19 +19,21 @@ const options = {
       </h1>
       <Calculator client:load />
     </article>
-    <footer class="flex items-center justify-center gap-2 text-[#783F2A]">
-      Desarrollado por <a
-        href="https://felixicaza.com"
-        target="_blank"
-        aria-label="Sitio web de Félix Icaza"
-      >
-        <img
-          width="120"
-          src="/img/logo.svg"
-          alt="Félix Icaza Logo"
-          fetchpriority="high"
-        />
-      </a>
+    <footer class="space-y-5 text-[#783F2A]">
+      <p class="flex items-center justify-center gap-1.5">
+        <span>
+          <Icon
+            class="translate-y-[1px]"
+            name="bi:info-circle-fill"
+            size={14}
+          />
+        </span>
+        <a
+          class="font-semibold active:underline any-hover:underline"
+          href="/como-funciona">¿Cómo funciona?</a
+        >
+      </p>
+      <Author />
     </footer>
   </main>
 </Layout>
