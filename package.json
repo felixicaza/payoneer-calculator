@@ -32,7 +32,7 @@
     "@astrojs/check": "0.9.1",
     "@astrojs/react": "3.6.1",
     "@astrojs/tailwind": "5.1.0",
-    "@vite-pwa/astro": "0.3.1",
+    "@vite-pwa/astro": "0.4.0",
     "astro": "4.13.1",
     "astro-iconify": "1.2.0",
     "firebase": "10.12.5",
