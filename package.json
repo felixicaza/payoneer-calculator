@@ -35,7 +35,7 @@
     "@vite-pwa/astro": "0.4.0",
     "astro": "4.13.3",
     "astro-iconify": "1.2.0",
-    "firebase": "10.12.5",
+    "firebase": "10.13.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "tailwindcss": "3.4.9",
