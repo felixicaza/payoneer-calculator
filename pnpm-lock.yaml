@@ -19,7 +19,7 @@ importers:
         version: 5.1.0(astro@4.15.2(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.5.4))(tailwindcss@3.4.10)
       '@vite-pwa/astro':
         specifier: 0.4.0
-        version: 0.4.0(astro@4.15.2(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.5.4))(vite-plugin-pwa@0.20.2(vite@5.4.2(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0))
+        version: 0.4.0(astro@4.15.2(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.5.4))(vite-plugin-pwa@0.20.5(vite@5.4.2(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0))
       astro:
         specifier: 4.15.2
         version: 4.15.2(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.5.4)
@@ -42,8 +42,8 @@ importers:
         specifier: 5.5.4
         version: 5.5.4
       vite-plugin-pwa:
-        specifier: 0.20.2
-        version: 0.20.2(vite@5.4.2(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0)
+        specifier: 0.20.5
+        version: 0.20.5(vite@5.4.2(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0)
       workbox-window:
         specifier: 7.1.0
         version: 7.1.0
@@ -4468,11 +4468,11 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vite-plugin-pwa@0.20.2:
-    resolution: {integrity: sha512-9wLqHt/NjP7YKj6CCEKS5+Fhffo6tHGrAa+wvoqCG59oZkmpX5lBBl38MVjLaO4ELrLqjdtUhILJDwZu+q/hGQ==}
+  vite-plugin-pwa@0.20.5:
+    resolution: {integrity: sha512-aweuI/6G6n4C5Inn0vwHumElU/UEpNuO+9iZzwPZGTCH87TeZ6YFMrEY6ZUBQdIHHlhTsbMDryFARcSuOdsz9Q==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
-      '@vite-pwa/assets-generator': ^0.2.4
+      '@vite-pwa/assets-generator': ^0.2.6
       vite: ^3.1.0 || ^4.0.0 || ^5.0.0
       workbox-build: ^7.1.0
       workbox-window: ^7.1.0
@@ -6717,10 +6717,10 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vite-pwa/astro@0.4.0(astro@4.15.2(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.5.4))(vite-plugin-pwa@0.20.2(vite@5.4.2(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0))':
+  '@vite-pwa/astro@0.4.0(astro@4.15.2(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.5.4))(vite-plugin-pwa@0.20.5(vite@5.4.2(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0))':
     dependencies:
       astro: 4.15.2(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.5.4)
-      vite-plugin-pwa: 0.20.2(vite@5.4.2(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0)
+      vite-plugin-pwa: 0.20.5(vite@5.4.2(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0)
 
   '@vitejs/plugin-react@4.3.1(vite@5.4.2(@types/node@22.0.0)(terser@5.31.3))':
     dependencies:
@@ -10148,7 +10148,7 @@ snapshots:
       '@types/unist': 3.0.2
       vfile-message: 4.0.2
 
-  vite-plugin-pwa@0.20.2(vite@5.4.2(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0):
+  vite-plugin-pwa@0.20.5(vite@5.4.2(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.1.0):
     dependencies:
       debug: 4.3.6
       pretty-bytes: 6.1.1
