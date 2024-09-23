@@ -31,7 +31,7 @@
   "dependencies": {
     "@astrojs/check": "0.9.3",
     "@astrojs/react": "3.6.2",
-    "@astrojs/tailwind": "5.1.0",
+    "@astrojs/tailwind": "5.1.1",
     "@vite-pwa/astro": "0.4.3",
     "astro": "4.15.6",
     "astro-iconify": "1.2.0",
