@@ -16,13 +16,13 @@ importers:
         version: 3.6.3(@types/node@22.0.0)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(terser@5.31.3)
       '@astrojs/tailwind':
         specifier: 5.1.2
-        version: 5.1.2(astro@4.16.13(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2))(tailwindcss@3.4.15)
+        version: 5.1.2(astro@4.16.14(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2))(tailwindcss@3.4.15)
       '@vite-pwa/astro':
         specifier: 0.4.3
-        version: 0.4.3(astro@4.16.13(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2))(vite-plugin-pwa@0.20.5(vite@5.4.10(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.3.0))
+        version: 0.4.3(astro@4.16.14(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2))(vite-plugin-pwa@0.20.5(vite@5.4.10(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.3.0))
       astro:
-        specifier: 4.16.13
-        version: 4.16.13(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2)
+        specifier: 4.16.14
+        version: 4.16.14(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2)
       astro-iconify:
         specifier: 1.2.0
         version: 1.2.0
@@ -1860,8 +1860,8 @@ packages:
   astro-iconify@1.2.0:
     resolution: {integrity: sha512-arLDiSop3DAHHS30raZysspkz5MO9moJJZ4rJk1Ty+4W1jZDa00Jme0LrnRJRDB6BB2EDTxC553fo20yz3MeYw==}
 
-  astro@4.16.13:
-    resolution: {integrity: sha512-Mtd76+BC0zLWqoXpf9xc731AhdH4MNh5JFHYdLRvSH0Nqn48hA64dPGh/cWsJvh/DZFmC0NTZusM1Qq2gyNaVg==}
+  astro@4.16.14:
+    resolution: {integrity: sha512-2IuLkIp4idyspugq+F52rHZyNqHHi2AdQzuKp3SGytg/YAm50dNeWhP/7l+enjgWZLloLq5xsH5gVQpoDFoyFg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -4938,9 +4938,9 @@ snapshots:
       - supports-color
       - terser
 
-  '@astrojs/tailwind@5.1.2(astro@4.16.13(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2))(tailwindcss@3.4.15)':
+  '@astrojs/tailwind@5.1.2(astro@4.16.14(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2))(tailwindcss@3.4.15)':
     dependencies:
-      astro: 4.16.13(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2)
+      astro: 4.16.14(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2)
       autoprefixer: 10.4.20(postcss@8.4.47)
       postcss: 8.4.47
       postcss-load-config: 4.0.2(postcss@8.4.47)
@@ -6742,9 +6742,9 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vite-pwa/astro@0.4.3(astro@4.16.13(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2))(vite-plugin-pwa@0.20.5(vite@5.4.10(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.3.0))':
+  '@vite-pwa/astro@0.4.3(astro@4.16.14(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2))(vite-plugin-pwa@0.20.5(vite@5.4.10(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.3.0))':
     dependencies:
-      astro: 4.16.13(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2)
+      astro: 4.16.14(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2)
       vite-plugin-pwa: 0.20.5(vite@5.4.10(@types/node@22.0.0)(terser@5.31.3))(workbox-build@7.1.1(@types/babel__core@7.20.5))(workbox-window@7.3.0)
 
   '@vitejs/plugin-react@4.3.3(vite@5.4.10(@types/node@22.0.0)(terser@5.31.3))':
@@ -6953,7 +6953,7 @@ snapshots:
       - debug
       - supports-color
 
-  astro@4.16.13(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2):
+  astro@4.16.14(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.2):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
