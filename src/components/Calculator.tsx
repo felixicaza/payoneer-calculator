@@ -2,7 +2,7 @@ import { useState, useRef, type ReactElement } from 'react'
 
 export default function Calculator(): ReactElement {
   const INITIAL_VALUE = 20
-  const BANK_FEE = 4
+  const BANK_FEE = 5
   const PAYONEER_FEE = 3.15
   const PAYONEER_FEE_EXTRACT = 0.0185
   const MAX_SAFE_NUMBER = 99_999
