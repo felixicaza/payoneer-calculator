@@ -12,8 +12,8 @@ importers:
         specifier: 0.9.4
         version: 0.9.4(prettier-plugin-astro@0.14.1)(prettier@3.4.2)(typescript@5.7.3)
       '@astrojs/react':
-        specifier: 4.1.2
-        version: 4.1.2(@types/node@22.0.0)(@types/react-dom@19.0.3(@types/react@19.0.6))(@types/react@19.0.6)(jiti@1.21.6)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(terser@5.31.3)(yaml@2.6.1)
+        specifier: 4.1.4
+        version: 4.1.4(@types/node@22.0.0)(@types/react-dom@19.0.3(@types/react@19.0.6))(@types/react@19.0.6)(jiti@1.21.6)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(terser@5.31.3)(yaml@2.6.1)
       '@astrojs/tailwind':
         specifier: 5.1.4
         version: 5.1.4(astro@4.16.18(@types/node@22.0.0)(rollup@2.79.1)(terser@5.31.3)(typescript@5.7.3))(tailwindcss@3.4.17)
@@ -162,8 +162,8 @@ packages:
     resolution: {integrity: sha512-Z9IYjuXSArkAUx3N6xj6+Bnvx8OdUSHA8YoOgyepp3+zJmtVYJIl/I18GozdJVW1p5u/CNpl3Km7/gwTJK85cw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
 
-  '@astrojs/react@4.1.2':
-    resolution: {integrity: sha512-Slw8Bho50w1+rYnSnDl5PDAUikSOEItx5DEJU5OgmarTirBr1audIb2DgC8faAGcGkq5WhuUVsSiq/TmSORlwA==}
+  '@astrojs/react@4.1.4':
+    resolution: {integrity: sha512-PdTgUDysZopxYAS/LNFcrwgLC0gm0fUe7jfPSU5o4V4ZU/hZXShMBY1beLNoQHpbFaRnLi0ot2MS/81NU734WQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
     peerDependencies:
       '@types/react': ^17.0.50 || ^18.0.21 || ^19.0.0
@@ -5131,7 +5131,7 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/react@4.1.2(@types/node@22.0.0)(@types/react-dom@19.0.3(@types/react@19.0.6))(@types/react@19.0.6)(jiti@1.21.6)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(terser@5.31.3)(yaml@2.6.1)':
+  '@astrojs/react@4.1.4(@types/node@22.0.0)(@types/react-dom@19.0.3(@types/react@19.0.6))(@types/react@19.0.6)(jiti@1.21.6)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(terser@5.31.3)(yaml@2.6.1)':
     dependencies:
       '@types/react': 19.0.6
       '@types/react-dom': 19.0.3(@types/react@19.0.6)
