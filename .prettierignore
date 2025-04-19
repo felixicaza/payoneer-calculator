@@ -1,4 +1,0 @@
-dist
-pnpm-lock.yaml
-src/scripts/logger.js
-dev-dist
