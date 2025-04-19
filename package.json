@@ -6,10 +6,13 @@
     "astro": "astro",
     "build": "astro check && astro build",
     "dev": "astro dev",
-    "prepare": "husky",
+    "prepare": "simple-git-hooks",
     "preview": "astro preview",
     "start": "astro dev",
     "run:eslint": "eslint --cache --fix --ext .js,.mjs,.cjs ./"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
     "./**/*.{js,mjs,cjs}": [
@@ -58,10 +61,10 @@
     "eslint-plugin-n": "16.0.0",
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-react": "7.35.0",
-    "husky": "9.1.4",
     "lint-staged": "15.2.8",
     "prettier": "3.3.3",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "0.6.5"
+    "prettier-plugin-tailwindcss": "0.6.5",
+    "simple-git-hooks": "2.12.1"
   }
 }

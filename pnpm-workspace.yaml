@@ -2,3 +2,4 @@ onlyBuiltDependencies:
   - esbuild
   - protobufjs
   - sharp
+  - simple-git-hooks
