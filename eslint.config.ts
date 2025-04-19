@@ -14,8 +14,6 @@ import pluginYml from 'eslint-plugin-yml'
 import neostandard, { plugins, resolveIgnoresFromGitignore } from 'neostandard'
 import parserTs from '@typescript-eslint/parser'
 
-console.log(resolveIgnoresFromGitignore())
-
 export default defineConfig([
   globalIgnores(resolveIgnoresFromGitignore()),
   { languageOptions: { globals: { ...globals.browser, ...globals.node, ...globals.serviceworker } } },
