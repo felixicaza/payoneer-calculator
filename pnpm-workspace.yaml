@@ -3,3 +3,4 @@ onlyBuiltDependencies:
   - protobufjs
   - sharp
   - simple-git-hooks
+  - unrs-resolver
