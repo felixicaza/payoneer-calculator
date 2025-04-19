@@ -1,6 +1,6 @@
 onlyBuiltDependencies:
-  - esbuild
-  - protobufjs
-  - sharp
-  - simple-git-hooks
-  - unrs-resolver
+   - esbuild
+   - protobufjs
+   - sharp
+   - simple-git-hooks
+   - unrs-resolver

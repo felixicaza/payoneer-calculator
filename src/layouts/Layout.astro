@@ -26,13 +26,7 @@ const { title, description } = options
     <link crossorigin href="//www.googletagmanager.com/" rel="preconnect" />
     <link crossorigin href="//www.google-analytics.com/" rel="preconnect" />
 
-    <link
-      href="/img/logo.svg"
-      rel="preload"
-      type="image/svg+xml"
-      as="image"
-      fetchpriority="high"
-    />
+    <link href="/img/logo.svg" rel="preload" type="image/svg+xml" as="image" fetchpriority="high" />
 
     <style is:inline>
       @view-transition {
@@ -44,43 +38,19 @@ const { title, description } = options
     <meta name="description" content={description} />
     <meta name="author" content="Félix Icaza - https://felixicaza.com" />
     <link rel="canonical" href={Astro.url.href} />
-    <meta
-      name="google-site-verification"
-      content="IJH7DDHaPX1Us0he6rNkTPlC_9I5G5aktg3SKheBUNw"
-    />
+    <meta name="google-site-verification" content="IJH7DDHaPX1Us0he6rNkTPlC_9I5G5aktg3SKheBUNw" />
 
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/favicons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicons/favicon-16x16.png"
-    />
-    <link
-      rel="mask-icon"
-      href="/favicons/safari-pinned-tab.svg"
-      color="#ffece5"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#ffece5" />
     <meta name="msapplication-TileColor" content="#ffece5" />
     <meta name="theme-color" content="#ffece5" />
 
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     <script src="/src/scripts/pwa.ts"></script>
 
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Calculadora Payoneer" />
     <meta name="application-name" content="Calculadora Payoneer" />
@@ -265,7 +235,6 @@ const { title, description } = options
   <script>
     import { initializeApp } from 'firebase/app'
     import { getAnalytics } from 'firebase/analytics'
-    import '@scripts/logger.js'
 
     if (window.location.hostname === 'payoneer-calculator.web.app') {
       const firebaseConfig = {

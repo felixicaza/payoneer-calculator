@@ -55,10 +55,10 @@ export default function Calculator(): ReactElement {
   }
 
   const TOTAL_EXTRACT = (
-    value * PAYONEER_FEE_EXTRACT +
-    PAYONEER_FEE +
-    BANK_FEE +
-    value
+    value * PAYONEER_FEE_EXTRACT
+    + PAYONEER_FEE
+    + BANK_FEE
+    + value
   ).toFixed(2)
 
   const OUTPUT_TOTAL = new Intl.NumberFormat('en-US', {
@@ -90,7 +90,8 @@ export default function Calculator(): ReactElement {
                 <path
                   fill="currentColor"
                   d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32"
-                ></path>
+                >
+                </path>
               </svg>
             </button>
             <button
@@ -104,7 +105,8 @@ export default function Calculator(): ReactElement {
                 <path
                   fill="currentColor"
                   d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32"
-                ></path>
+                >
+                </path>
               </svg>
             </button>
           </div>
