@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config'
 
-import tailwind from '@astrojs/tailwind'
 import react from '@astrojs/react'
 import AstroPWA from '@vite-pwa/astro'
+import tailwindcss from '@tailwindcss/vite'
 
 const websiteURL = 'https://payoneer-calculator.web.app/'
 
@@ -13,17 +13,18 @@ export default defineConfig({
   server: {
     host: true
   },
+  vite: {
+    css: {
+      transformer: 'lightningcss'
+    },
+    plugins: [tailwindcss()]
+  },
   integrations: [
-    tailwind({
-      applyBaseStyles: false
-    }),
     react(),
     AstroPWA({
       mode: 'development',
       base: '/',
       scope: '/',
-      start_url: '/?utm_source=web_app',
-      id: 'cal-pay',
       includeAssets: ['/favicons/android-chrome-512x512.png'],
       registerType: 'autoUpdate',
       manifest: {

@@ -9,7 +9,7 @@ import pluginJsonc from 'eslint-plugin-jsonc'
 import pluginPackageJson from 'eslint-plugin-package-json'
 import pluginReactHooks from 'eslint-plugin-react-hooks'
 import pluginReactRefresh from 'eslint-plugin-react-refresh'
-import pluginTailwind from 'eslint-plugin-tailwindcss'
+// import pluginTailwind from 'eslint-plugin-tailwindcss'
 import pluginYml from 'eslint-plugin-yml'
 import neostandard, { plugins, resolveIgnoresFromGitignore } from 'neostandard'
 import parserTs from '@typescript-eslint/parser'
@@ -27,7 +27,7 @@ export default defineConfig([
   pluginJsonc.configs['flat/recommended-with-jsonc'],
   pluginPackageJson.configs.recommended,
   pluginYml.configs['flat/recommended'],
-  pluginTailwind.configs['flat/recommended'],
+  // pluginTailwind.configs['flat/recommended'],
   {
     files: ['src/**/*.tsx'],
     languageOptions: { parser: parserTs, parserOptions: { ecmaFeatures: { jsx: true } } },

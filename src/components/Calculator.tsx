@@ -73,14 +73,14 @@ export default function Calculator(): ReactElement {
           <span className="text-[#783F2A]">Ingresa el monto a retirar:</span>
           <div className="relative mx-auto w-max">
             <input
-              className="col-span-1 row-span-2 max-w-xs rounded bg-[#ff4800]/10 py-4 text-center text-4xl font-semibold text-[#783F2A] focus:outline focus:outline-4 focus:outline-[#ff4800]/15"
+              className="col-span-1 row-span-2 max-w-xs rounded bg-[#ff4800]/10 py-4 text-center text-4xl font-semibold text-[#783F2A] focus:outline-4 focus:outline-[#ff4800]/15"
               type="text"
               value={inputValue}
               ref={inputRef}
               onChange={handleChange}
             />
             <button
-              className="absolute right-0 top-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15"
+              className="absolute right-0 top-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15 cursor-pointer"
               type="button"
               ref={plusBtnRef}
               onClick={handlePlus}
@@ -95,7 +95,7 @@ export default function Calculator(): ReactElement {
               </svg>
             </button>
             <button
-              className="absolute bottom-0 right-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15"
+              className="absolute bottom-0 right-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15 cursor-pointer"
               type="button"
               ref={minusBtnRef}
               onClick={handleMinus}
