@@ -55,10 +55,10 @@ export default function Calculator(): ReactElement {
   }
 
   const TOTAL_EXTRACT = (
-    value * PAYONEER_FEE_EXTRACT +
-    PAYONEER_FEE +
-    BANK_FEE +
-    value
+    value * PAYONEER_FEE_EXTRACT
+    + PAYONEER_FEE
+    + BANK_FEE
+    + value
   ).toFixed(2)
 
   const OUTPUT_TOTAL = new Intl.NumberFormat('en-US', {
@@ -73,14 +73,14 @@ export default function Calculator(): ReactElement {
           <span className="text-[#783F2A]">Ingresa el monto a retirar:</span>
           <div className="relative mx-auto w-max">
             <input
-              className="col-span-1 row-span-2 max-w-xs rounded bg-[#ff4800]/10 py-4 text-center text-4xl font-semibold text-[#783F2A] focus:outline focus:outline-4 focus:outline-[#ff4800]/15"
+              className="col-span-1 row-span-2 max-w-xs rounded bg-[#ff4800]/10 py-4 text-center text-4xl font-semibold text-[#783F2A] focus:outline-4 focus:outline-[#ff4800]/15"
               type="text"
               value={inputValue}
               ref={inputRef}
               onChange={handleChange}
             />
             <button
-              className="absolute right-0 top-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15"
+              className="absolute right-0 top-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15 cursor-pointer"
               type="button"
               ref={plusBtnRef}
               onClick={handlePlus}
@@ -90,11 +90,12 @@ export default function Calculator(): ReactElement {
                 <path
                   fill="currentColor"
                   d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32"
-                ></path>
+                >
+                </path>
               </svg>
             </button>
             <button
-              className="absolute bottom-0 right-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15"
+              className="absolute bottom-0 right-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15 cursor-pointer"
               type="button"
               ref={minusBtnRef}
               onClick={handleMinus}
@@ -104,7 +105,8 @@ export default function Calculator(): ReactElement {
                 <path
                   fill="currentColor"
                   d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32"
-                ></path>
+                >
+                </path>
               </svg>
             </button>
           </div>

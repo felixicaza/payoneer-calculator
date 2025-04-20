@@ -1,6 +1,6 @@
 name: Deploy project
 
-'on':
+"on":
    push:
       branches: [main]
 
@@ -35,7 +35,7 @@ jobs:
          - name: Deploy project to Firebase
            uses: FirebaseExtended/action-hosting-deploy@v0.9.0
            with:
-              repoToken: '${{ secrets.GITHUB_TOKEN }}'
-              firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PAYONEER_CALCULATOR }}'
+              repoToken: "${{ secrets.GITHUB_TOKEN }}"
+              firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_PAYONEER_CALCULATOR }}"
               channelId: live
               projectId: payoneer-calculator

@@ -17,21 +17,26 @@ const options = {
         <span>
           <Icon name="material-symbols:chevron-left-rounded" size={22} />
         </span>
-        <a class="font-semibold active:underline any-hover:underline" href="/"
-          >Regresar</a
-        >
+        <a class="font-semibold active:underline any-hover:underline" href="/">
+          Regresar
+        </a>
       </section>
       <article class="space-y-4 text-[#783F2A]">
         <h1 class="mb-8 text-4xl font-bold">
           ¿Cómo Funciona la Calculadora de Payoneer?
         </h1>
         <p>
-          Esta calculadora es una <a
+          Esta calculadora es una
+          {' '}
+          <a
             class="font-semibold underline"
             href="https://felixicaza.com/blog/que-son-las-progressive-web-apps"
             target="_blank"
-            rel="noopener noreferrer">Progressive Web App (PWA)</a
-          >, lo que significa que combina lo mejor de las aplicaciones web y
+            rel="noopener noreferrer"
+          >
+            Progressive Web App (PWA)
+          </a>
+          , lo que significa que combina lo mejor de las aplicaciones web y
           móviles. Aquí puedes conocer algunas de sus características clave:
         </p>
         <ul class="ml-8 list-disc space-y-2">
@@ -41,7 +46,9 @@ const options = {
             navegador, sin necesidad de pasar por una tienda de aplicaciones.
           </li>
           <li>
-            <strong>Funciona sin Conexión:</strong> Una vez instalada, la calculadora
+            <strong>Funciona sin Conexión:</strong>
+            {' '}
+            Una vez instalada, la calculadora
             puede funcionar sin conexión a Internet, permitiéndote hacer cálculos
             en cualquier momento y lugar.
           </li>
@@ -64,7 +71,9 @@ const options = {
         </p>
         <ul class="ml-8 list-disc space-y-2">
           <li>
-            <strong>Monto Inicial:</strong> La calculadora comienza con un valor
+            <strong>Monto Inicial:</strong>
+            {' '}
+            La calculadora comienza con un valor
             inicial de $20, que es el monto mínimo que puedes retirar en un Cajero
             ATM.
           </li>
@@ -72,15 +81,20 @@ const options = {
             <strong>Cálculo de Tarifas:</strong>
             <ul class="ml-8 list-disc space-y-2">
               <li>
-                <strong>Tarifa de Banco:</strong> Se aplica una tarifa fija de $4.
+                <strong>Tarifa de Banco:</strong>
+                {' '}
+                Se aplica una tarifa fija de $4.
               </li>
               <li>
-                <strong>Tarifa de Payoneer:</strong> Se aplica una tarifa fija de
+                <strong>Tarifa de Payoneer:</strong>
+                {' '}
+                Se aplica una tarifa fija de
                 $3.15.
               </li>
               <li>
-                <strong>Tarifa de Extracción de Payoneer:</strong> Se calcula como
-                el 1.85% del monto a retirar.
+                <strong>Tarifa de Extracción de Payoneer:</strong>
+                {' '}
+                Se calcula como el 1.85% del monto a retirar.
               </li>
             </ul>
           </li>
@@ -93,10 +107,13 @@ const options = {
                 extracción de Payoneer.
               </li>
               <li>
-                La fórmula para el cálculo total es: <em
-                  >Total a recibir = ( monto a retirar × 0.0185 ) + 3.15 + 4 +
-                  monto a retirar</em
-                >.
+                La fórmula para el cálculo total es:
+                {' '}
+                <em>Total a recibir = ( monto a retirar × 0.0185 ) + 3.15 + 4 +
+                  monto a retirar
+                </em
+                >
+                .
               </li>
             </ul>
             <li>
@@ -107,6 +124,7 @@ const options = {
         </ul>
       </article>
     </div>
+
     <Author />
   </main>
 </Layout>
