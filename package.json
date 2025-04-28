@@ -65,6 +65,6 @@
     "jiti": "2.4.2",
     "lint-staged": "15.5.1",
     "neostandard": "0.12.1",
-    "simple-git-hooks": "2.12.1"
+    "simple-git-hooks": "2.13.0"
   }
 }
