@@ -39,7 +39,7 @@
     "astro": "5.7.10",
     "astro-iconify": "1.2.0",
     "firebase": "11.6.1",
-    "lightningcss": "1.29.3",
+    "lightningcss": "1.30.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "tailwindcss": "4.1.4",
