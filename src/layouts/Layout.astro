@@ -1,4 +1,7 @@
 ---
+import { Head } from 'astro-capo'
+import { Schema } from 'astro-seo-schema'
+
 import { pwaInfo } from 'virtual:pwa-info'
 
 import SplashScreens from '@components/SplashScreens.astro'
@@ -20,7 +23,7 @@ const { title, description } = options
 
 <!doctype html>
 <html lang="es" dir="ltr">
-  <head>
+  <Head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
@@ -60,8 +63,26 @@ const { title, description } = options
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
 
+    <Schema
+      item={{
+        '@context': 'https://schema.org',
+        '@type': 'WebApplication',
+        name: 'Payoneer Calculator',
+        url: 'https://payoneer-calculator.web.app/',
+        applicationCategory: 'FinanceApplication',
+        description,
+        operatingSystem: 'All',
+        browserRequirements: 'Requires JavaScript',
+        creator: {
+          '@type': 'Person',
+          name: 'Felix Icaza',
+          url: 'https://felixicaza.com'
+        }
+      }}
+    />
+
     <SplashScreens />
-  </head>
+  </Head>
   <body class:list={{ 'h-svh overflow-hidden': Astro.url.pathname === '/' }}>
     <slot />
   </body>
