@@ -3,14 +3,15 @@ import Author from '@components/Author.astro'
 import Layout from '@layouts/Layout.astro'
 import { Icon } from 'astro-iconify'
 
+import { DESCRIPTION, INITIAL_VALUE, BANK_FEE, PAYONEER_FEE, PAYONEER_FEE_EXTRACT } from '@data/constants'
+
 const options = {
   title: '¿Cómo Funciona la Calculadora de Payoneer?',
-  description:
-    'Calcula de manera FÁCIL, RÁPIDA Y SEGURA, todas las COMISIONES DE PAYONEER Y DEL BANCO aplicadas al momento de realizar un retiro de un CAJERO ATM en Nicaragua.'
+  description: DESCRIPTION
 }
 ---
 
-<Layout {options}>
+<Layout options={options}>
   <main class="min-h-screen space-y-8 bg-[#ff4800]/10 py-8">
     <div class="mx-auto max-w-4xl space-y-6 px-4">
       <section class="flex items-center gap-1 text-[#783F2A]">
@@ -27,7 +28,6 @@ const options = {
         </h1>
         <p>
           Esta calculadora es una
-          {' '}
           <a
             class="font-semibold underline"
             href="https://felixicaza.com/blog/que-son-las-progressive-web-apps"
@@ -47,7 +47,6 @@ const options = {
           </li>
           <li>
             <strong>Funciona sin Conexión:</strong>
-            {' '}
             Una vez instalada, la calculadora
             puede funcionar sin conexión a Internet, permitiéndote hacer cálculos
             en cualquier momento y lugar.
@@ -72,9 +71,13 @@ const options = {
         <ul class="ml-8 list-disc space-y-2">
           <li>
             <strong>Monto Inicial:</strong>
-            {' '}
             La calculadora comienza con un valor
-            inicial de $20, que es el monto mínimo que puedes retirar en un Cajero
+            inicial de
+            {new Intl.NumberFormat('en-US', {
+              style: 'currency',
+              currency: 'USD'
+            }).format(INITIAL_VALUE)}
+            , que es el monto mínimo que puedes retirar en un Cajero
             ATM.
           </li>
           <li class="space-y-2">
@@ -82,19 +85,27 @@ const options = {
             <ul class="ml-8 list-disc space-y-2">
               <li>
                 <strong>Tarifa de Banco:</strong>
-                {' '}
-                Se aplica una tarifa fija de $4.
+                Se aplica una tarifa fija de
+                {new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD'
+                }).format(BANK_FEE)}
+                .
               </li>
               <li>
                 <strong>Tarifa de Payoneer:</strong>
-                {' '}
                 Se aplica una tarifa fija de
-                $3.15.
+                {new Intl.NumberFormat('en-US', {
+                  style: 'currency',
+                  currency: 'USD'
+                }).format(PAYONEER_FEE)}
+                .
               </li>
               <li>
                 <strong>Tarifa de Extracción de Payoneer:</strong>
-                {' '}
-                Se calcula como el 1.85% del monto a retirar.
+                Se calcula como el
+                {`${(PAYONEER_FEE_EXTRACT * 100).toFixed(2)}%`}
+                del monto a retirar.
               </li>
             </ul>
           </li>
@@ -108,11 +119,9 @@ const options = {
               </li>
               <li>
                 La fórmula para el cálculo total es:
-                {' '}
-                <em>Total a recibir = ( monto a retirar × 0.0185 ) + 3.15 + 4 +
+                <em>Total a recibir = ( monto a retirar × {PAYONEER_FEE_EXTRACT} ) + {BANK_FEE} + {PAYONEER_FEE} +
                   monto a retirar
-                </em
-                >
+                </em>
                 .
               </li>
             </ul>

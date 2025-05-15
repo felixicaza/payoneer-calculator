@@ -1,10 +1,8 @@
 import { useState, useRef, type ReactElement } from 'react'
 
+import { INITIAL_VALUE, BANK_FEE, PAYONEER_FEE, PAYONEER_FEE_EXTRACT } from '@data/constants'
+
 export default function Calculator(): ReactElement {
-  const INITIAL_VALUE = 20
-  const BANK_FEE = 6
-  const PAYONEER_FEE = 3.15
-  const PAYONEER_FEE_EXTRACT = 0.01855
   const MAX_SAFE_NUMBER = 99_999
 
   const [inputValue, setInputValue] = useState(INITIAL_VALUE)
@@ -54,12 +52,7 @@ export default function Calculator(): ReactElement {
     }
   }
 
-  const TOTAL_EXTRACT = (
-    value * PAYONEER_FEE_EXTRACT
-    + PAYONEER_FEE
-    + BANK_FEE
-    + value
-  ).toFixed(2)
+  const TOTAL_EXTRACT = (value * PAYONEER_FEE_EXTRACT + PAYONEER_FEE + BANK_FEE + value).toFixed(2)
 
   const OUTPUT_TOTAL = new Intl.NumberFormat('en-US', {
     style: 'currency',

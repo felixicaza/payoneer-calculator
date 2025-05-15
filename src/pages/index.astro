@@ -4,14 +4,15 @@ import { Icon } from 'astro-iconify'
 import Calculator from '@components/Calculator.tsx'
 import Author from '@components/Author.astro'
 
+import { DESCRIPTION } from '@data/constants'
+
 const options = {
   title: 'Calculadora de Comisiones de Payoneer en Nicaragua',
-  description:
-    'Calcula de manera FÁCIL, RÁPIDA Y SEGURA, todas las COMISIONES DE PAYONEER Y DEL BANCO aplicadas al momento de realizar un retiro de un CAJERO ATM en Nicaragua.'
+  description: DESCRIPTION
 }
 ---
 
-<Layout {options}>
+<Layout options={options}>
   <main class="grid h-svh grid-rows-1 bg-[#ff4800]/10 px-4 py-8 text-center">
     <article class="self-center">
       <h1 class="mb-8 text-5xl font-bold text-[#783F2A]">
