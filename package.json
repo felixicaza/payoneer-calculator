@@ -2,6 +2,7 @@
   "name": "payoneer-calculator",
   "version": "1.0.0",
   "private": true,
+  "description": "Calcula de manera FÁCIL, RÁPIDA Y SEGURA, todas las COMISIONES DE PAYONEER Y DEL BANCO aplicadas al momento de realizar un retiro de un CAJERO ATM en Nicaragua.",
   "homepage": "https://payoneer-calculator.web.app/",
   "bugs": {
     "url": "https://github.com/felixicaza/payoneer-calculator/issues"
@@ -24,53 +25,52 @@
     "start": "astro dev"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
+    "pre-commit": "pnpm nano-staged"
   },
-  "lint-staged": {
-    "./**/*.{js,mjs,cjs,ts,tsx,astro,json,yaml,yml}": "pnpm lint:fix"
+  "nano-staged": {
+    "*": "pnpm lint:fix"
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
-    "@astrojs/react": "4.2.4",
+    "@astrojs/react": "4.2.7",
     "@playform/compress": "0.1.9",
-    "@tailwindcss/vite": "4.1.4",
-    "@types/react": "19.1.2",
-    "@types/react-dom": "19.1.2",
-    "@vite-pwa/astro": "1.0.1",
-    "astro": "5.7.4",
+    "@tailwindcss/vite": "4.1.7",
+    "@types/react": "19.1.4",
+    "@types/react-dom": "19.1.5",
+    "@vite-pwa/astro": "1.1.0",
+    "astro": "5.7.13",
     "astro-capo": "0.0.1",
     "astro-compressor": "1.0.0",
     "astro-iconify": "1.2.0",
     "astro-seo-schema": "5.0.0",
     "astro-sitemap": "1.0.0",
-    "firebase": "11.6.0",
-    "lightningcss": "1.29.3",
+    "firebase": "11.7.3",
+    "lightningcss": "1.30.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "schema-dts": "1.1.5",
-    "tailwindcss": "4.1.4",
+    "tailwindcss": "4.1.7",
     "typescript": "5.8.3",
     "vite-plugin-pwa": "1.0.0",
     "workbox-window": "7.3.0"
   },
   "devDependencies": {
-    "@eslint-react/eslint-plugin": "1.48.4",
-    "@eslint/js": "9.25.0",
+    "@eslint-react/eslint-plugin": "1.49.0",
+    "@eslint/js": "9.26.0",
     "@types/eslint-plugin-tailwindcss": "3.17.0",
-    "@typescript-eslint/parser": "8.30.1",
-    "eslint": "9.25.0",
+    "@typescript-eslint/parser": "8.32.1",
+    "eslint": "9.26.0",
     "eslint-plugin-astro": "1.3.1",
     "eslint-plugin-jsonc": "2.20.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
-    "eslint-plugin-package-json": "0.29.1",
+    "eslint-plugin-package-json": "0.31.0",
     "eslint-plugin-react-hooks": "5.2.0",
-    "eslint-plugin-react-refresh": "0.4.19",
-    "eslint-plugin-tailwindcss": "3.18.0",
-    "eslint-plugin-yml": "1.17.0",
-    "globals": "16.0.0",
+    "eslint-plugin-react-refresh": "0.4.20",
+    "eslint-plugin-yml": "1.18.0",
+    "globals": "16.1.0",
     "jiti": "2.4.2",
-    "lint-staged": "15.5.1",
+    "nano-staged": "0.8.0",
     "neostandard": "0.12.1",
-    "simple-git-hooks": "2.12.1"
+    "simple-git-hooks": "2.13.0"
   }
 }

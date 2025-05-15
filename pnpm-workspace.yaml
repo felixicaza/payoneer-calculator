@@ -1,7 +1,8 @@
 onlyBuiltDependencies:
-   - "@firebase/util"
-   - esbuild
-   - protobufjs
-   - sharp
-   - simple-git-hooks
-   - unrs-resolver
+  - '@firebase/util'
+  - '@tailwindcss/oxide'
+  - esbuild
+  - protobufjs
+  - sharp
+  - simple-git-hooks
+  - unrs-resolver
