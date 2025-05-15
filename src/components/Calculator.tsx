@@ -1,8 +1,8 @@
-import { useState, useRef, type ReactElement } from 'react'
+import { useState, useRef } from 'preact/hooks'
 
 import { INITIAL_VALUE, BANK_FEE, PAYONEER_FEE, PAYONEER_FEE_EXTRACT } from '@data/constants'
 
-export default function Calculator(): ReactElement {
+export default function Calculator() {
   const MAX_SAFE_NUMBER = 99_999
 
   const [inputValue, setInputValue] = useState(INITIAL_VALUE)
@@ -11,7 +11,7 @@ export default function Calculator(): ReactElement {
   const plusBtnRef = useRef<HTMLButtonElement>(null)
   const minusBtnRef = useRef<HTMLButtonElement>(null)
 
-  const handleChange = (): void => {
+  const handleInput = (): void => {
     const input = inputRef.current
 
     if (input !== null) {
@@ -70,7 +70,7 @@ export default function Calculator(): ReactElement {
               type="text"
               value={inputValue}
               ref={inputRef}
-              onChange={handleChange}
+              onInput={handleInput}
             />
             <button
               className="absolute right-0 top-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15 cursor-pointer"

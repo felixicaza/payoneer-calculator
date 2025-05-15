@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config'
 
 import { URL, TITLE, DESCRIPTION, COLOR, ICONS_SIZES } from './src/data/constants'
 
-import react from '@astrojs/react'
+import preact from '@astrojs/preact'
 import sitemap from 'astro-sitemap'
 import playformCompress from '@playform/compress'
 import compressor from 'astro-compressor'
@@ -28,7 +28,7 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   integrations: [
-    react(),
+    preact(),
     AstroPWA({
       base: '/',
       scope: '/',
@@ -61,9 +61,6 @@ export default defineConfig({
       workbox: {
         navigateFallback: '/',
         globPatterns: ['./**/*.{html,css,js,svg,png}']
-      },
-      pwaAssets: {
-        config: true
       },
       devOptions: {
         enabled: true
