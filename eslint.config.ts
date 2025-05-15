@@ -55,8 +55,6 @@ export default defineConfig([
       '@stylistic/comma-dangle': ['error', 'never'],
       '@stylistic/no-multi-spaces': ['error', { ignoreEOLComments: false }],
 
-      'tailwindcss/no-custom-classname': 'off',
-
       'astro/jsx-a11y/anchor-is-valid': 'warn',
 
       'yml/indent': ['error', 3, { indicatorValueIndent: 2 }],
