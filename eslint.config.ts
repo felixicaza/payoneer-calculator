@@ -4,6 +4,7 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
 import pluginJs from '@eslint/js'
 import pluginReact from '@eslint-react/eslint-plugin'
+import pluginPaths from 'eslint-plugin-paths'
 import { configs as configsAstro } from 'eslint-plugin-astro'
 import pluginJsonc from 'eslint-plugin-jsonc'
 import pluginPackageJson from 'eslint-plugin-package-json'
@@ -48,6 +49,11 @@ export default defineConfig([
     }
   },
   {
+    plugins: {
+      paths: pluginPaths
+    }
+  },
+  {
     rules: {
       '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
       '@stylistic/arrow-parens': ['error', 'always'],
@@ -58,7 +64,9 @@ export default defineConfig([
       'astro/jsx-a11y/anchor-is-valid': 'warn',
 
       'yml/indent': ['error', 3, { indicatorValueIndent: 2 }],
-      'yml/quotes': ['error', { prefer: 'double' }]
+      'yml/quotes': ['error', { prefer: 'double' }],
+
+      'paths/alias': 'error'
     }
   }
 ]) as Linter.Config
