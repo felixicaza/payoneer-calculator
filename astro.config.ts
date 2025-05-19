@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config'
 
+// eslint-disable-next-line paths/alias
 import { URL, TITLE, DESCRIPTION, COLOR, ICONS_SIZES } from './src/data/constants'
 
 import preact from '@astrojs/preact'
