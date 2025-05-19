@@ -1,5 +1,7 @@
 import { useState, useRef } from 'preact/hooks'
 
+import '@styles/calculator.css'
+
 import { INITIAL_VALUE, BANK_FEE, PAYONEER_FEE, PAYONEER_FEE_EXTRACT } from '@data/constants'
 
 export default function Calculator() {
@@ -62,24 +64,12 @@ export default function Calculator() {
   return (
     <>
       <section>
-        <label className="flex flex-col gap-2">
-          <span className="text-[#783F2A]">Ingresa el monto a retirar:</span>
-          <div className="relative mx-auto w-max">
-            <input
-              className="col-span-1 row-span-2 max-w-xs rounded bg-[#ff4800]/10 py-4 text-center text-4xl font-semibold text-[#783F2A] focus:outline-4 focus:outline-[#ff4800]/15"
-              type="text"
-              value={inputValue}
-              ref={inputRef}
-              onInput={handleInput}
-            />
-            <button
-              className="absolute right-0 top-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15 cursor-pointer"
-              type="button"
-              ref={plusBtnRef}
-              onClick={handlePlus}
-              aria-label="Aumentar cantidad"
-            >
-              <svg width="0.7rem" viewBox="0 0 448 512">
+        <label>
+          <span>Ingresa el monto a retirar:</span>
+          <span className="wrapper">
+            <input type="text" value={inputValue} ref={inputRef} onInput={handleInput} />
+            <button type="button" ref={plusBtnRef} onClick={handlePlus} aria-label="Aumentar cantidad">
+              <svg width="11" viewBox="0 0 448 512">
                 <path
                   fill="currentColor"
                   d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32"
@@ -87,14 +77,8 @@ export default function Calculator() {
                 </path>
               </svg>
             </button>
-            <button
-              className="absolute bottom-0 right-0 flex h-1/2 w-[36px] items-center justify-center rounded-tr font-bold text-[#783F2A] transition-colors active:bg-[#ff4800]/10 any-hover:bg-[#ff4800]/15 cursor-pointer"
-              type="button"
-              ref={minusBtnRef}
-              onClick={handleMinus}
-              aria-label="Disminuir cantidad"
-            >
-              <svg width="0.7rem" viewBox="0 0 448 512">
+            <button type="button" ref={minusBtnRef} onClick={handleMinus} aria-label="Disminuir cantidad">
+              <svg width="11" viewBox="0 0 448 512">
                 <path
                   fill="currentColor"
                   d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32"
@@ -102,21 +86,17 @@ export default function Calculator() {
                 </path>
               </svg>
             </button>
-          </div>
+          </span>
         </label>
       </section>
       {inputValue >= INITIAL_VALUE && (
-        <div>
-          <p className="text-[#783F2A]">Necesitas al menos:</p>
-          <output className="rounded px-4 py-2 text-lg font-bold text-[#265A36]">
-            {OUTPUT_TOTAL}
-          </output>
+        <div className="output">
+          <p>Necesitas al menos:</p>
+          <output>{OUTPUT_TOTAL}</output>
         </div>
       )}
       {inputValue < INITIAL_VALUE && (
-        <span className="rounded px-4 py-2 text-lg font-bold text-[#9D1A1A]">
-          El valor mínimo es de $20
-        </span>
+        <span className="output-label">El valor mínimo es de $20</span>
       )}
     </>
   )

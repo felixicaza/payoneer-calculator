@@ -34,6 +34,7 @@
     "@astrojs/check": "0.9.4",
     "@astrojs/preact": "4.0.11",
     "@playform/compress": "0.1.9",
+    "@unocss/reset": "66.1.2",
     "@vite-pwa/astro": "1.1.0",
     "astro": "5.7.13",
     "astro-capo": "0.0.1",

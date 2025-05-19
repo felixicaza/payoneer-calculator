@@ -1,7 +1,8 @@
 ---
+import { Icon } from 'astro-iconify'
+
 import Author from '@components/Author.astro'
 import Layout from '@layouts/Layout.astro'
-import { Icon } from 'astro-iconify'
 
 import { DESCRIPTION, INITIAL_VALUE, BANK_FEE, PAYONEER_FEE, PAYONEER_FEE_EXTRACT } from '@data/constants'
 
@@ -12,24 +13,19 @@ const options = {
 ---
 
 <Layout options={options}>
-  <main class="min-h-screen space-y-8 bg-[#ff4800]/10 py-8">
-    <div class="mx-auto max-w-4xl space-y-6 px-4">
-      <section class="flex items-center gap-1 text-[#783F2A]">
+  <main>
+    <div>
+      <section>
         <span>
           <Icon name="material-symbols:chevron-left-rounded" size={22} />
         </span>
-        <a class="font-semibold active:underline any-hover:underline" href="/">
-          Regresar
-        </a>
+        <a href="/">Regresar</a>
       </section>
-      <article class="space-y-4 text-[#783F2A]">
-        <h1 class="mb-8 text-4xl font-bold">
-          ¿Cómo Funciona la Calculadora de Payoneer?
-        </h1>
+      <article>
+        <h1>¿Cómo Funciona la Calculadora de Payoneer?</h1>
         <p>
           Esta calculadora es una
           <a
-            class="font-semibold underline"
             href="https://felixicaza.com/blog/que-son-las-progressive-web-apps"
             target="_blank"
             rel="noopener noreferrer"
@@ -39,7 +35,7 @@ const options = {
           , lo que significa que combina lo mejor de las aplicaciones web y
           móviles. Aquí puedes conocer algunas de sus características clave:
         </p>
-        <ul class="ml-8 list-disc space-y-2">
+        <ul>
           <li>
             <strong>Instalación Fácil:</strong>
             Puedes instalar la calculadora directamente en tu dispositivo desde el
@@ -68,7 +64,7 @@ const options = {
           para retirar el dinero, teniendo en cuenta las tarifas aplicables.
           Aquí conocerás paso a paso cómo se realiza el cálculo:
         </p>
-        <ul class="ml-8 list-disc space-y-2">
+        <ul>
           <li>
             <strong>Monto Inicial:</strong>
             La calculadora comienza con un valor
@@ -80,9 +76,9 @@ const options = {
             , que es el monto mínimo que puedes retirar en un Cajero
             ATM.
           </li>
-          <li class="space-y-2">
+          <li>
             <strong>Cálculo de Tarifas:</strong>
-            <ul class="ml-8 list-disc space-y-2">
+            <ul>
               <li>
                 <strong>Tarifa de Banco:</strong>
                 Se aplica una tarifa fija de
@@ -109,9 +105,9 @@ const options = {
               </li>
             </ul>
           </li>
-          <li class="space-y-2">
+          <li>
             <strong>Cálculo Total:</strong>
-            <ul class="ml-8 list-disc space-y-2">
+            <ul>
               <li>
                 El total a recibir se calcula sumando el monto a retirar, la
                 tarifa fija de Payoneer, la tarifa de banco y el porcentaje de
@@ -137,3 +133,72 @@ const options = {
     <Author />
   </main>
 </Layout>
+
+<style>
+  main {
+    background: color-mix(in srgb, #ff4800 10%, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    min-height: 100dvh;
+    padding-block: 32px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-inline: auto;
+      max-width: 896px;
+      padding-inline: 16px;
+
+      section {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: #572E1E;
+      }
+
+      article {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        color: #572E1E;
+      }
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 40px;
+      font-weight: 700;
+      margin-bottom: 32px;
+    }
+
+    a {
+      font-weight: 600;
+
+      &:active {
+        text-decoration: underline;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-left: 32px;
+      list-style: disc;
+
+      li:has(&) {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  }
+</style>

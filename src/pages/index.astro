@@ -13,25 +13,76 @@ const options = {
 ---
 
 <Layout options={options}>
-  <main class="grid h-svh grid-rows-1 bg-[#ff4800]/10 px-4 py-8 text-center">
-    <article class="self-center">
-      <h1 class="mb-8 text-5xl font-bold text-[#783F2A]">
-        Calculadora Payoneer Nicaragua
-      </h1>
+  <main>
+    <article>
+      <h1>Calculadora Payoneer Nicaragua</h1>
       <Calculator client:load />
     </article>
 
-    <footer class="space-y-5 text-[#783F2A]">
-      <p class="flex items-center justify-center gap-1.5">
+    <footer>
+      <p>
         <span>
-          <Icon class="translate-y-px" name="bi:info-circle-fill" size={14} />
+          <Icon name="bi:info-circle-fill" size={14} />
         </span>
-        <a class="font-semibold active:underline any-hover:underline" href="/como-funciona">
-          ¿Cómo funciona?
-        </a>
+        <a href="/como-funciona">¿Cómo funciona?</a>
       </p>
 
       <Author />
     </footer>
   </main>
 </Layout>
+
+<style>
+  main {
+    display: grid;
+    height: 100svh;
+    grid-template-rows: 1fr;
+    background: color-mix(in srgb, #ff4800 10%, transparent);
+    padding: 32px 16px;
+    text-align: center;
+
+    article {
+      align-self: center;
+
+      h1 {
+        font-size: 48px;
+        line-height: 1;
+        font-weight: bold;
+        color: #572E1E;
+        margin-bottom: 32px;
+      }
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      color: #572E1E;
+
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+
+        svg {
+          translate: 0 1px;
+        }
+      }
+
+      a {
+        font-weight: 600;
+
+        &:active {
+          text-decoration: underline;
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+</style>
