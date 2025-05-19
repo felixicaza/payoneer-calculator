@@ -1,9 +1,0 @@
-@import "tailwindcss";
-
-@custom-variant any-hover {
-  @media (any-hover: hover) {
-    &:hover {
-      @slot;
-    }
-  }
-}

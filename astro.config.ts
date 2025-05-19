@@ -5,9 +5,9 @@ import { URL, TITLE, DESCRIPTION, COLOR, ICONS_SIZES } from './src/data/constant
 import preact from '@astrojs/preact'
 import sitemap from 'astro-sitemap'
 import playformCompress from '@playform/compress'
+import playformInline from '@playform/inline'
 import compressor from 'astro-compressor'
 import AstroPWA from '@vite-pwa/astro'
-import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,8 +24,7 @@ export default defineConfig({
   vite: {
     css: {
       transformer: 'lightningcss'
-    },
-    plugins: [tailwindcss()]
+    }
   },
   integrations: [
     preact(),
