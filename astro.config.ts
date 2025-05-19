@@ -90,6 +90,7 @@ export default defineConfig({
         return item
       }
     }),
+    playformInline(),
     playformCompress({
       HTML: {
         'html-minifier-terser': {
