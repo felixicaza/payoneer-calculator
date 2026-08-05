@@ -4,7 +4,6 @@
   "exclude": ["dist"],
   "compilerOptions": {
     "types": ["vite-plugin-pwa/info", "vite-plugin-pwa/vanillajs"],
-    "baseUrl": ".",
     "paths": {
       "@components/*": ["./src/components/*"],
       "@data/*": ["./src/data/*"],
