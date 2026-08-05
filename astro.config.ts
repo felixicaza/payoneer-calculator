@@ -35,13 +35,16 @@ export default defineConfig({
       registerType: 'autoUpdate',
       manifest: {
         name: TITLE,
+        // oxlint-disable-next-line eslint-js/camelcase
         short_name: TITLE,
         description: DESCRIPTION,
         dir: 'ltr',
         lang: 'es',
         display: 'standalone',
         orientation: 'portrait',
+        // oxlint-disable-next-line eslint-js/camelcase
         background_color: COLOR,
+        // oxlint-disable-next-line eslint-js/camelcase
         theme_color: COLOR,
         icons: ICONS_SIZES.flatMap((size) => [
           {
@@ -118,10 +121,12 @@ export default defineConfig({
         terser: {
           compress: {
             arguments: true,
+            // oxlint-disable-next-line eslint-js/camelcase
             drop_console: true
           },
           format: {
             comments: false,
+            // oxlint-disable-next-line eslint-js/camelcase
             indent_level: 2
           },
           ecma: 2020
