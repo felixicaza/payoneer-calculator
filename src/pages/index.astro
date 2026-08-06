@@ -14,18 +14,16 @@ const options = {
 
 <Layout options={options}>
   <main>
-    <article>
+    <section>
       <h1>Calculadora Payoneer Nicaragua</h1>
       <Calculator client:load />
-    </article>
+    </section>
 
     <footer>
-      <p>
-        <span>
-          <Icon height={14} icon="bi:info-circle-fill" width={14} />
-        </span>
-        <a href="/como-funciona">¿Cómo funciona?</a>
-      </p>
+      <a href="/como-funciona">
+        <Icon height={20} icon="material-symbols:help-rounded" width={20} />
+        ¿Cómo funciona?
+      </a>
 
       <Author />
     </footer>
@@ -37,51 +35,39 @@ const options = {
     display: grid;
     height: 100svh;
     grid-template-rows: 1fr;
-    background: color-mix(in srgb, #ff4800 10%, transparent);
     padding: 32px 16px;
     text-align: center;
 
-    article {
+    section {
       align-self: center;
 
       h1 {
         font-size: 48px;
         line-height: 1;
         font-weight: bold;
-        color: #572E1E;
         margin-bottom: 32px;
       }
     }
 
-    footer {
+    footer a {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      color: #572E1E;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      font-weight: 600;
 
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
+      &:active {
+        text-decoration: underline;
+      }
 
-        svg {
-          translate: 0 1px;
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
         }
       }
 
-      a {
-        font-weight: 600;
-
-        &:active {
-          text-decoration: underline;
-        }
-
-        @media (any-hover: hover) {
-          &:hover {
-            text-decoration: underline;
-          }
-        }
+      svg {
+        translate: 0 1px;
       }
     }
   }

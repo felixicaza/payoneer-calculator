@@ -1,0 +1,6 @@
+:root {
+  --accent: #572E1E;
+  --highlight: color-mix(in srgb, #ff4800 10%, transparent);
+  --success: #265a36;
+  --error: #9d1a1a;
+}

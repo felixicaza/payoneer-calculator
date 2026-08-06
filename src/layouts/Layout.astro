@@ -5,6 +5,7 @@ import { Schema } from 'astro-seo-schema'
 import { pwaInfo } from 'virtual:pwa-info'
 
 import '@unocss/reset/tailwind.css'
+import '@styles/global.css'
 
 import SplashScreens from '@components/SplashScreens.astro'
 
@@ -105,6 +106,11 @@ const { title, description } = options
 <style>
   @view-transition {
     navigation: auto;
+  }
+
+  body {
+    background: var(--highlight);
+    color: var(--accent);
   }
 
   .cover {
