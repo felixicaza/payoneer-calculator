@@ -28,6 +28,19 @@ function calculateTotal(amount: number) {
 export default function Calculator() {
   const [value, setValue] = useState(INITIAL_VALUE)
 
+  function handleBeforeInput(event: InputEvent) {
+    const input = event.currentTarget as HTMLInputElement
+
+    const start = input.selectionStart ?? input.value.length
+    const end = input.selectionEnd ?? input.value.length
+
+    const nextValue = input.value.slice(0, start) + (event.data ?? '') + input.value.slice(end)
+
+    if (Number(nextValue) > LIMITS.max) {
+      event.preventDefault()
+    }
+  }
+
   function handleInput(event: InputEvent) {
     const target = event.currentTarget as HTMLInputElement
     setValue(sanitizeValue(target.valueAsNumber))
@@ -45,7 +58,7 @@ export default function Calculator() {
       <section className="input-container">
         <label htmlFor="amount">Ingresa el monto a retirar:</label>
         <div className="wrapper">
-          <input id="amount" type="number" value={value} onInput={handleInput} min={LIMITS.min} max={LIMITS.max} step={LIMITS.step} />
+          <input id="amount" type="number" value={value} onBeforeInput={handleBeforeInput} onInput={handleInput} min={LIMITS.min} max={LIMITS.max} step={LIMITS.step} />
           <button type="button" onClick={() => updateValue(LIMITS.step)} aria-label="Aumentar cantidad" disabled={value >= LIMITS.max}>
             <svg width="11" height="11" viewBox="0 0 448 512">
               <path
