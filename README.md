@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://payoneer-calculator.web.app/" target="_blank">
-    <img src="./assets/payoneer-calculator-screenshot.png">
+    <img src="./.github/assets/payoneer-calculator-screenshot.png">
   </a>
   <h1>Calculadora Payoneer Nicaragua</h1>
   <p>Calcula de manera FÁCIL, RÁPIDA Y SEGURA, todas las COMISIONES DE PAYONEER Y DEL BANCO aplicadas al momento de realizar un retiro de un CAJERO ATM en Nicaragua.</p>
