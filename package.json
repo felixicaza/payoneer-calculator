@@ -66,5 +66,11 @@
     "oxlint": "1.76.0",
     "oxlint-tsgolint": "7.0.2001",
     "simple-git-hooks": "2.13.1"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.8.0"
+    }
   }
 }
