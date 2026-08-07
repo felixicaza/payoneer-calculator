@@ -38,10 +38,9 @@
 ## 📦 Stack
 
 - [**Astro**](https://astro.build/) - El framework web para sitios web basados en contenidos.
-- [**Typescript**](https://www.typescriptlang.org/) - JavaScript con sintaxis para tipos.
-- [**React**](https://react.dev/) - La biblioteca para interfaces de usuario web y nativas.
-- [**Tailwindcss**](https://tailwindcss.com/) - Un marco de trabajo CSS que prioriza las utilidades para crear rápidamente diseños personalizados.
 - [**@vite-pwa/astro**](https://tailwindcss.com/) - Integración de PWA de configuración cero para Astro.
+- [**Preact**](https://preactjs.com/) - Biblioteca de JavaScript para construir interfaces de usuario.
+- [**Typescript**](https://www.typescriptlang.org/) - JavaScript con sintaxis para tipos.
 - [**Firebase**](https://firebase.google.com/?hl=es) - Plataforma de desarrollo de aplicaciones web y móviles de Google.
 
 ## 🚀 Contribuir
