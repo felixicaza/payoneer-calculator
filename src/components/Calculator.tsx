@@ -1,5 +1,6 @@
-import { useState } from 'preact/hooks'
+import { useState, useEffect } from 'preact/hooks'
 import clsx from 'clsx'
+import { tiks } from '@rexa-developer/tiks'
 
 import '@styles/calculator.css'
 
@@ -28,6 +29,16 @@ function calculateTotal(amount: number) {
 export default function Calculator() {
   const [value, setValue] = useState(INITIAL_VALUE)
 
+  useEffect(() => {
+    tiks.init({
+      volume: 0.5
+    })
+  }, [])
+
+  function updateValue(delta: number) {
+    setValue((previous) => sanitizeValue(previous + delta))
+  }
+
   function handleBeforeInput(event: InputEvent) {
     const input = event.currentTarget as HTMLInputElement
 
@@ -46,8 +57,14 @@ export default function Calculator() {
     setValue(sanitizeValue(target.valueAsNumber))
   }
 
-  function updateValue(delta: number) {
-    setValue((previous) => sanitizeValue(previous + delta))
+  function handleIncrement() {
+    tiks.click()
+    updateValue(LIMITS.step)
+  }
+
+  function handleDecrement() {
+    tiks.click()
+    updateValue(-LIMITS.step)
   }
 
   const outputTotal = currencyFormatter.format(calculateTotal(value))
@@ -59,7 +76,7 @@ export default function Calculator() {
         <label htmlFor="amount">Ingresa el monto a retirar:</label>
         <div className="wrapper">
           <input id="amount" type="number" value={value} onBeforeInput={handleBeforeInput} onInput={handleInput} min={LIMITS.min} max={LIMITS.max} step={LIMITS.step} />
-          <button type="button" onClick={() => updateValue(LIMITS.step)} aria-label="Aumentar cantidad" disabled={value >= LIMITS.max}>
+          <button type="button" onClick={handleIncrement} aria-label="Aumentar cantidad" disabled={value >= LIMITS.max}>
             <svg width="11" height="11" viewBox="0 0 448 512">
               <path
                 fill="currentColor"
@@ -67,7 +84,7 @@ export default function Calculator() {
               />
             </svg>
           </button>
-          <button type="button" onClick={() => updateValue(-LIMITS.step)} aria-label="Disminuir cantidad" disabled={value === LIMITS.min}>
+          <button type="button" onClick={handleDecrement} aria-label="Disminuir cantidad" disabled={value === LIMITS.min}>
             <svg width="11" height="11" viewBox="0 0 448 512">
               <path
                 fill="currentColor"
