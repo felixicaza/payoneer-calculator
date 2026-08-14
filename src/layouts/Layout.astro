@@ -1,4 +1,6 @@
 ---
+import type { PWAAssetHeadLink } from 'virtual:pwa-assets/head'
+
 import { Head } from '@felixicaza/astro-capo'
 import { Schema } from 'astro-seo-schema'
 
@@ -19,6 +21,12 @@ interface Props {
 
 const { options } = Astro.props as Props
 const { title, description } = options
+
+function getLinkSizes(link: PWAAssetHeadLink) {
+  if (link.sizes) return link.sizes
+  if (link.rel === 'apple-touch-icon') return link.href.match(/(\d+x\d+)/)?.[1]
+  return undefined
+}
 ---
 
 <!doctype html>
@@ -42,7 +50,7 @@ const { title, description } = options
 
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     { pwaAssetsHead.themeColor && <meta content={pwaAssetsHead.themeColor.content} name="theme-color" /> }
-    { pwaAssetsHead.links.map((link) => (<link {...link} />)) }
+    { pwaAssetsHead.links.map((link) => (<link {...link} sizes={getLinkSizes(link)} />)) }
     <script src="@scripts/pwa.ts"></script>
 
     <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" />

@@ -11,7 +11,7 @@ import playformInline from '@playform/inline'
 import compressor from 'astro-compressor'
 import AstroPWA from '@vite-pwa/astro'
 
-import { createAppleSplashScreens, minimal2023Preset } from '@vite-pwa/assets-generator/config'
+import { createAppleSplashScreens } from '@vite-pwa/assets-generator/config'
 
 export default defineConfig({
   site: URL,
@@ -56,24 +56,31 @@ export default defineConfig({
         ]
       },
       pwaAssets: {
-        image: 'public/maskable-icon-512x512.png',
+        image: 'public/pwa-icon-512x512.png',
         preset: {
-          ...minimal2023Preset,
+          assetName(type, size) {
+            if (type === 'transparent') return `pwa-icon-${size.width}x${size.height}.png`
+            if (type === 'maskable') return `pwa-icon-maskable-${size.width}x${size.height}.png`
+            if (type === 'apple') return `apple-touch-icon-${size.width}x${size.height}.png`
+            return `pwa-${size.width}x${size.height}.png`
+          },
+          transparent: {
+            padding: 0.1,
+            sizes: ICONS_SIZES,
+            favicons: [[16, 'favicon-16x16.png'], [32, 'favicon-32x32.png'], [48, 'favicon.ico']]
+          },
+          maskable: {
+            padding: 0.1,
+            sizes: ICONS_SIZES,
+            resizeOptions: { background: 'transparent' }
+          },
+          apple: {
+            padding: 0.1,
+            sizes: [60, 76, 120, 152, 180],
+            resizeOptions: { background: 'transparent' }
+          },
           appleSplashScreens: createAppleSplashScreens({
-            resizeOptions: { background: '#ffece5', fit: 'contain' },
-            linkMediaOptions: {
-              log: true,
-              addMediaScreen: true,
-              basePath: '/',
-              xhtml: false
-            },
-            png: {
-              compressionLevel: 9,
-              quality: 60
-            },
-            name: (landscape, size) => {
-              return `apple-splash-${landscape ? 'landscape' : 'portrait'}-${size.width}x${size.height}.png`
-            }
+            resizeOptions: { background: '#ffece5' }
           }, [
             'iPhone 16', 'iPhone 16 Plus', 'iPhone 16 Pro', 'iPhone 16 Pro Max',
             'iPhone 15', 'iPhone 15 Plus', 'iPhone 15 Pro', 'iPhone 15 Pro Max',
