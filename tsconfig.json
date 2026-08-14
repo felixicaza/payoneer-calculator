@@ -3,7 +3,7 @@
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"],
   "compilerOptions": {
-    "types": ["vite-plugin-pwa/info", "vite-plugin-pwa/vanillajs"],
+    "types": ["vite-plugin-pwa/info", "vite-plugin-pwa/pwa-assets", "vite-plugin-pwa/vanillajs"],
     "paths": {
       "@components/*": ["./src/components/*"],
       "@data/*": ["./src/data/*"],
