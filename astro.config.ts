@@ -1,6 +1,7 @@
+// oxlint-disable eslint-js/camelcase
+
 import { defineConfig } from 'astro/config'
 
-// eslint-disable-next-line paths/alias
 import { URL, TITLE, DESCRIPTION, COLOR, ICONS_SIZES } from './src/data/constants'
 
 import preact from '@astrojs/preact'
@@ -10,7 +11,8 @@ import playformInline from '@playform/inline'
 import compressor from 'astro-compressor'
 import AstroPWA from '@vite-pwa/astro'
 
-// https://astro.build/config
+import { createAppleSplashScreens, minimal2023Preset } from '@vite-pwa/assets-generator/config'
+
 export default defineConfig({
   site: URL,
   trailingSlash: 'never',
@@ -34,32 +36,51 @@ export default defineConfig({
       scope: '/',
       registerType: 'autoUpdate',
       manifest: {
+        id: 'payoneer-calculator',
         name: TITLE,
-        // oxlint-disable-next-line eslint-js/camelcase
         short_name: TITLE,
         description: DESCRIPTION,
         dir: 'ltr',
         lang: 'es',
         display: 'standalone',
         orientation: 'portrait',
-        // oxlint-disable-next-line eslint-js/camelcase
         background_color: COLOR,
-        // oxlint-disable-next-line eslint-js/camelcase
         theme_color: COLOR,
-        icons: ICONS_SIZES.flatMap((size) => [
+        scope: '/',
+        start_url: '/?utm_source=web_app',
+        related_applications: [
           {
-            src: `/manifest/icon-${size}x${size}.png`,
-            sizes: `${size}x${size}`,
-            type: 'image/png',
-            purpose: 'any'
-          },
-          {
-            src: `/manifest/maskable-icon-${size}x${size}.png`,
-            sizes: `${size}x${size}`,
-            type: 'image/png',
-            purpose: 'maskable'
+            platform: 'webapp',
+            url: 'https://payoneer-calculator.web.app/manifest.webmanifest'
           }
-        ])
+        ]
+      },
+      pwaAssets: {
+        image: 'public/maskable-icon-512x512.png',
+        preset: {
+          ...minimal2023Preset,
+          appleSplashScreens: createAppleSplashScreens({
+            resizeOptions: { background: '#ffece5', fit: 'contain' },
+            linkMediaOptions: {
+              log: true,
+              addMediaScreen: true,
+              basePath: '/',
+              xhtml: false
+            },
+            png: {
+              compressionLevel: 9,
+              quality: 60
+            },
+            name: (landscape, size) => {
+              return `apple-splash-${landscape ? 'landscape' : 'portrait'}-${size.width}x${size.height}.png`
+            }
+          }, [
+            'iPhone 16', 'iPhone 16 Plus', 'iPhone 16 Pro', 'iPhone 16 Pro Max',
+            'iPhone 15', 'iPhone 15 Plus', 'iPhone 15 Pro', 'iPhone 15 Pro Max',
+            'iPhone 14', 'iPhone 14 Plus', 'iPhone 14 Pro', 'iPhone 14 Pro Max',
+            'iPad 11"', 'iPad Air 11"', 'iPad Pro 11"'
+          ])
+        }
       },
       workbox: {
         navigateFallback: '/',
@@ -88,9 +109,8 @@ export default defineConfig({
           es: 'es'
         }
       },
-      // Remove trailing slash
       serialize(item) {
-        item.url = item.url.replace(/\/$/g, '')
+        item.url = item.url.replace(/\/$/g, '') // remove trailing slash
         return item
       }
     }),
@@ -121,12 +141,10 @@ export default defineConfig({
         terser: {
           compress: {
             arguments: true,
-            // oxlint-disable-next-line eslint-js/camelcase
             drop_console: true
           },
           format: {
             comments: false,
-            // oxlint-disable-next-line eslint-js/camelcase
             indent_level: 2
           },
           ecma: 2020
