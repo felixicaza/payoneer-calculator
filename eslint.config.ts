@@ -21,6 +21,12 @@ export default felixicaza({}, [
     }
   },
   {
+    files: ['src/**/*.astro'],
+    rules: {
+      '@eslint-react/no-missing-key': 'off'
+    }
+  },
+  {
     rules: {
       'astro/no-unused-css-selector': 'off'
     }
