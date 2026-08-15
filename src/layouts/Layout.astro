@@ -10,6 +10,8 @@ import { pwaAssetsHead } from 'virtual:pwa-assets/head'
 import '@unocss/reset/tailwind.css'
 import '@styles/global.css'
 
+import { URL, TITLE, AUTHOR_NAME, AUTHOR_WEBSITE } from '@data/constants'
+
 interface Options {
   title: string
   description: string
@@ -40,23 +42,23 @@ function getLinkSizes(link: PWAAssetHeadLink) {
     <link crossorigin href="//www.googletagmanager.com/" rel="preconnect" />
     <link crossorigin href="//www.google-analytics.com/" rel="preconnect" />
 
-    <link as="image" fetchpriority="high" href="/img/logo.svg" rel="preload" type="image/svg+xml" />
+    <link as="image" fetchpriority="high" href="/logo.svg" rel="preload" type="image/svg+xml" />
 
     <meta content="index, follow" name="robots" />
     <meta content={description} name="description" />
-    <meta content="Félix Icaza - https://felixicaza.com" name="author" />
+    <meta content={`${AUTHOR_NAME} - ${AUTHOR_WEBSITE}`} name="author" />
     <link href={Astro.url.href} rel="canonical" />
     <meta content="IJH7DDHaPX1Us0he6rNkTPlC_9I5G5aktg3SKheBUNw" name="google-site-verification" />
 
-    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+    { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
     { pwaAssetsHead.themeColor && <meta content={pwaAssetsHead.themeColor.content} name="theme-color" /> }
     { pwaAssetsHead.links.map((link) => (<link {...link} sizes={getLinkSizes(link)} />)) }
     <script src="@scripts/pwa.ts"></script>
 
     <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" />
+    <meta content={TITLE} name="apple-mobile-web-app-title" />
+    <meta content={TITLE} name="application-name" />
     <meta content="yes" name="apple-touch-fullscreen" />
-    <meta content="Calculadora Payoneer" name="apple-mobile-web-app-title" />
-    <meta content="Calculadora Payoneer" name="application-name" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="yes" name="mobile-web-app-capable" />
 
@@ -64,16 +66,16 @@ function getLinkSizes(link: PWAAssetHeadLink) {
       item={{
         '@context': 'https://schema.org',
         '@type': 'WebApplication',
-        name: 'Payoneer Calculator',
-        url: 'https://payoneer-calculator.web.app/',
+        name: TITLE,
+        url: URL,
         applicationCategory: 'FinanceApplication',
         description,
         operatingSystem: 'All',
         browserRequirements: 'Requires JavaScript',
         creator: {
           '@type': 'Person',
-          name: 'Felix Icaza',
-          url: 'https://felixicaza.com'
+          name: AUTHOR_NAME,
+          url: AUTHOR_WEBSITE
         }
       }}
     />

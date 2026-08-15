@@ -2,7 +2,7 @@
 
 import { defineConfig } from 'astro/config'
 
-import { URL, TITLE, DESCRIPTION, COLOR, ICONS_SIZES } from './src/data/constants'
+import { URL, TITLE, DESCRIPTION, COLOR, PWA_ICONS_SIZES, PWA_APPLE_ICONS_SIZES } from './src/data/constants'
 
 import preact from '@astrojs/preact'
 import sitemap from 'astro-sitemap'
@@ -51,36 +51,36 @@ export default defineConfig({
         related_applications: [
           {
             platform: 'webapp',
-            url: 'https://payoneer-calculator.web.app/manifest.webmanifest'
+            url: `${URL}/manifest.webmanifest`
           }
         ]
       },
       pwaAssets: {
         image: 'public/pwa-icon-512x512.png',
         preset: {
-          assetName(type, size) {
-            if (type === 'transparent') return `pwa-icon-${size.width}x${size.height}.png`
-            if (type === 'maskable') return `pwa-icon-maskable-${size.width}x${size.height}.png`
-            if (type === 'apple') return `apple-touch-icon-${size.width}x${size.height}.png`
-            return `pwa-${size.width}x${size.height}.png`
+          assetName(type, { width, height }) {
+            if (type === 'transparent') return `pwa-icon-${width}x${height}.png`
+            if (type === 'maskable') return `pwa-icon-maskable-${width}x${height}.png`
+            if (type === 'apple') return `apple-touch-icon-${width}x${height}.png`
+            return `pwa-${width}x${height}.png`
           },
           transparent: {
             padding: 0.1,
-            sizes: ICONS_SIZES,
+            sizes: PWA_ICONS_SIZES,
             favicons: [[16, 'favicon-16x16.png'], [32, 'favicon-32x32.png'], [48, 'favicon.ico']]
           },
           maskable: {
             padding: 0.1,
-            sizes: ICONS_SIZES,
+            sizes: PWA_ICONS_SIZES,
             resizeOptions: { background: 'transparent' }
           },
           apple: {
             padding: 0.1,
-            sizes: [60, 76, 120, 152, 180],
+            sizes: PWA_APPLE_ICONS_SIZES,
             resizeOptions: { background: 'transparent' }
           },
           appleSplashScreens: createAppleSplashScreens({
-            resizeOptions: { background: '#ffece5' }
+            resizeOptions: { background: COLOR }
           }, [
             'iPhone 16', 'iPhone 16 Plus', 'iPhone 16 Pro', 'iPhone 16 Pro Max',
             'iPhone 15', 'iPhone 15 Plus', 'iPhone 15 Pro', 'iPhone 15 Pro Max',
@@ -162,6 +162,6 @@ export default defineConfig({
       Image: false,
       SVG: false
     }),
-    compressor()
+    compressor({ gzip: false })
   ]
 })

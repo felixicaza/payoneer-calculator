@@ -29,11 +29,7 @@ function calculateTotal(amount: number) {
 export default function Calculator() {
   const [value, setValue] = useState(INITIAL_VALUE)
 
-  useEffect(() => {
-    tiks.init({
-      volume: 0.5
-    })
-  }, [])
+  useEffect(() => { tiks.init({ volume: 0.5 }) }, [])
 
   function updateValue(delta: number) {
     setValue((previous) => sanitizeValue(previous + delta))
