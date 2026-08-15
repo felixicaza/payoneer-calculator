@@ -4,6 +4,9 @@ import { defineConfig } from 'astro/config'
 
 import { URL, TITLE, DESCRIPTION, COLOR, PWA_ICONS_SIZES, PWA_APPLE_ICONS_SIZES } from './src/data/constants'
 
+import { composeVisitors } from 'lightningcss'
+import pxtorem from 'lightningcss-plugin-pxtorem'
+
 import preact from '@astrojs/preact'
 import sitemap from 'astro-sitemap'
 import playformCompress from '@playform/compress'
@@ -26,7 +29,10 @@ export default defineConfig({
   compressHTML: false,
   vite: {
     css: {
-      transformer: 'lightningcss'
+      transformer: 'lightningcss',
+      lightningcss: {
+        visitor: composeVisitors([pxtorem()])
+      }
     }
   },
   integrations: [

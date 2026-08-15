@@ -259,6 +259,9 @@ importers:
       lightningcss:
         specifier: 1.33.0
         version: 1.33.0
+      lightningcss-plugin-pxtorem:
+        specifier: 1.0.0
+        version: 1.0.0(lightningcss@1.33.0)
       preact:
         specifier: 10.29.8
         version: 10.29.8(preact-render-to-string@6.7.0)
@@ -4031,6 +4034,11 @@ packages:
     cpu: [x64]
     os: [linux]
     libc: [musl]
+
+  lightningcss-plugin-pxtorem@1.0.0:
+    resolution: {integrity: sha512-1HuqiUevfnQt5b2OPHppsnpdHM26XRg0ECFkulMWblrfNzFfHGQ6UnudZoL8ygj7K4BTUaW4Qypwcovt6nz+ZQ==}
+    peerDependencies:
+      lightningcss: '>=1.18.0'
 
   lightningcss-win32-arm64-msvc@1.33.0:
     resolution: {integrity: sha512-1K+MPfLSFVpphzpdbfkhlWk6wBrTObBzS2T6db10PNOZgR9GoVsAWzwNyuhUYYbTp23j+4RrncfujZ4uAzXvwA==}
@@ -9694,6 +9702,10 @@ snapshots:
 
   lightningcss-linux-x64-musl@1.33.0:
     optional: true
+
+  lightningcss-plugin-pxtorem@1.0.0(lightningcss@1.33.0):
+    dependencies:
+      lightningcss: 1.33.0
 
   lightningcss-win32-arm64-msvc@1.33.0:
     optional: true

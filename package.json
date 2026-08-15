@@ -49,6 +49,7 @@
     "clsx": "2.1.1",
     "firebase": "12.17.1",
     "lightningcss": "1.33.0",
+    "lightningcss-plugin-pxtorem": "1.0.0",
     "preact": "10.29.8",
     "schema-dts": "1.1.5",
     "typescript": "6.0.3",
