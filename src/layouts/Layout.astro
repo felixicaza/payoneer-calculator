@@ -1,6 +1,8 @@
 ---
 import type { PWAAssetHeadLink } from 'virtual:pwa-assets/head'
 
+import { Font } from 'astro:assets'
+
 import { Head } from '@felixicaza/astro-capo'
 import { Schema } from 'astro-seo-schema'
 
@@ -62,6 +64,8 @@ function getLinkSizes(link: PWAAssetHeadLink) {
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="yes" name="mobile-web-app-capable" />
 
+    <Font cssVariable="--dm-sans" preload />
+
     <Schema
       item={{
         '@context': 'https://schema.org',
@@ -113,6 +117,7 @@ function getLinkSizes(link: PWAAssetHeadLink) {
   body {
     background: var(--highlight);
     color: var(--accent);
+    font-family: var(--dm-sans);
   }
 
   .cover {

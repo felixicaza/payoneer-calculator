@@ -86,7 +86,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 4px;
-    width: 270px;
+    width: 250px;
     margin-inline: auto;
 
     @media (width >= 768px) {
@@ -114,11 +114,11 @@
         translate: 0px 1.5px;
 
         @media (width >= 768px) {
-          translate: 0px 0.5px;
+          translate: 0px -0.5px;
         }
 
         @media (width >= 1536px) {
-          translate: 0px 1.5px;
+          translate: 0px 0.5px;
         }
       }
     }
