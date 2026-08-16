@@ -1,6 +1,6 @@
 // oxlint-disable eslint-js/camelcase
 
-import { defineConfig } from 'astro/config'
+import { defineConfig, fontProviders } from 'astro/config'
 
 import { URL, TITLE, DESCRIPTION, COLOR, PWA_ICONS_SIZES, PWA_APPLE_ICONS_SIZES } from './src/data/constants'
 
@@ -35,6 +35,14 @@ export default defineConfig({
       }
     }
   },
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: 'DM Sans',
+      cssVariable: '--dm-sans',
+      weights: ['100 700']
+    }
+  ],
   integrations: [
     preact(),
     AstroPWA({
